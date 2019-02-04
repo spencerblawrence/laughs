@@ -1,3 +1,5 @@
+[![Codeship Status for spencerblawrence/laughs](https://app.codeship.com/projects/01bd9c40-0add-0137-2bed-02ad0a8153d5/status?branch=master)](https://app.codeship.com/projects/326295)
+
 # README
 
 This README would normally document whatever steps are necessary to get the
