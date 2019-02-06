@@ -15,3 +15,19 @@
  *= require foundation_and_overrides
 
  */
+
+ /*
+ font-family: 'Arvo', serif;
+ font-family: 'Roboto Slab', serif; */
+
+ .title {
+   font-family: 'Arvo', serif;
+ }
+
+.logo-header {
+  font-family: 'Lobster', cursive;
+}
+
+p {
+ font-family: 'Roboto Slab', serif;
+}
