@@ -2,6 +2,7 @@ import React from "react";
 import { Router, browserHistory, Route, IndexRoute } from "react-router";
 import EventsIndexContainer from "../containers/EventsIndexContainer";
 import EventShowContainer from "../containers/EventShowContainer";
+import SplashPage from "./SplashPage";
 
 export const App = props => {
   return (

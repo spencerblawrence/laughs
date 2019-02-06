@@ -1,51 +1,52 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Laughs</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css?family=Arvo:700|Lobster|Roboto+Slab" rel="stylesheet">
-  <%= stylesheet_link_tag 'application', media: 'all' %>
-  <%= javascript_include_tag "vendor/modernizr" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <nav class="top-bar">
-    <ul class="title-area">
-      <li class="name">
-        <h1 class="logo-header"><a href="/">Laughs</a></h1>
-      </li>
-    </ul>
+    <title><%= content_for?(:title) ? yield(:title) : "Laughs.cc" %></title>
+    <link href="https://fonts.googleapis.com/css?family=Arvo:700|Lobster|Roboto+Slab" rel="stylesheet">
 
-    <section class="top-bar-section">
-      <ul class="right">
-        <%- if current_user -%>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-        <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
-        <%- end -%>
-      </ul>
-    </section>
-  </nav>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-  <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
-    </div>
-  <%- end -%>
+  <body>
 
-  <%= yield %>
+    <nav class="top-bar">
+      <div id="logo-header"><a href="/">Laughs</a></div>
+      <section class="top-bar-section">
+      <div class="top-bar-right">
+        <ul class="menu">
+          <%- if current_user -%>
+            <li class="button-nav"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          <%- else -%>
+            <li class="button-nav"><%= link_to 'Sign Up', new_user_registration_path %></li>
+            <li class="button-nav"><%= link_to 'Sign In', new_user_session_path %></li>
+          <%- end -%>
+        </ul>
+      </div>
+      </section>
+    </nav>
 
-  <%= javascript_include_tag 'application' %>
-
-  <%- if Rails.env.development? || Rails.env.test? -%>
-    <%= javascript_tag do %>
-      window.railsEnv = '<%= Rails.env %>'
+    <%- flash.each do |key, value| -%>
+      <div class="flash flash-<%= key %>">
+        <%= value %>
+      </div>
     <%- end -%>
-  <%- end -%>
-  <%= javascript_pack_tag 'application' %>
 
-  <%= yield :extra_footer %>
-</body>
+    <%= yield %>
+
+    <%= javascript_include_tag 'application' %>
+
+    <%- if Rails.env.development? || Rails.env.test? -%>
+      <%= javascript_tag do %>
+        window.railsEnv = '<%= Rails.env %>'
+      <%- end -%>
+    <%- end -%>
+    <%= javascript_pack_tag 'application' %>
+
+    <%= yield :extra_footer %>
+  </body>
 </html>
