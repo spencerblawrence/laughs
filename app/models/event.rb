@@ -4,6 +4,7 @@ class Event < ApplicationRecord
   validates :name, presence: true
   validates :location, presence: true
   validates :cost, presence: true
+  validates :start_date_time, presence: true
   validates :website, :format => URI::regexp(%w(http https))
 
   def date
