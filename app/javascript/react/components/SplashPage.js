@@ -3,9 +3,8 @@ import { Link } from "react-router";
 
 const SplashPage = props => {
   return (
-    <div className="callout columns small-10">
+    <div id="hero">
       <p>Hello from the splash page.</p>
-
     </div>
   );
 };
