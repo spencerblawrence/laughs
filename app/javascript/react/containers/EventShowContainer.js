@@ -28,14 +28,19 @@ class EventShowContainer extends Component {
   }
 
   render() {
+    let cost
+    if (this.state.event.cost == 0) {
+      cost = "FREE!"
+    }
     return (
-      <div>
+      <div className="callout">
         <h2 className="title">{this.state.event.name}</h2>
-        <p>{this.state.event.location}</p>
-        <p>{this.state.event.date}</p>
-        <p>{this.state.event.start_time}</p>
-        <p>{this.state.event.cost}</p>
-        <p>{this.state.event.cost}</p>
+        <p>{this.state.event.venue}</p>
+        <p>{this.state.event.address}</p>
+        <p>{this.state.event.started_at_date}</p>
+        <p>{this.state.event.started_at_time}</p>
+        <p>${this.state.event.cost}</p>
+        <p>{cost}</p>
       </div>
     );
   }

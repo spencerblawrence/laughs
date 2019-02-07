@@ -24,19 +24,11 @@
 
 $light-gray: #e6e6e6;
 
-.title {
-   font-family: 'Arvo', serif;
- }
-
 #logo-header a {
   font-family: 'Lobster', cursive;
   color: white;
   font-size: 35px;
   margin: 5px;
-}
-
-p {
- font-family: 'Roboto Slab', serif;
 }
 
 .callout {
@@ -47,7 +39,6 @@ p {
   height: 100vh;
   display:flex;
   min-width: 100%;
-  // background-color: red;
   background: image-url("laughs_splash.jpg");
   background-position: center;
   background-size: cover;

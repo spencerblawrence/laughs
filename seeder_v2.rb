@@ -22,25 +22,29 @@ url_array = [
 ]
 
 url_array.each do |url|
+
   doc = Nokogiri::HTML(open(url))
 
-  name = doc.css(".page-header").text.strip
+  title = doc.css(".page-header").text.strip
 
+  description = ""
   # description = doc.css("#event_description")[0].children.text
   # description = description.gsub("\n", "")
   # description = description.gsub("\t", "")
-  description = ""
 
   info = doc.css("#event_info")
+  event_info = doc.css("div[id=event_info]")
 
-  venue = info.css("span[itemprop=name]").text.strip
-  address_street = info.css("span[itemprop=streetAddress]").text.strip
-  address_city = info.css("span[itemprop=addressLocality]").text.strip
-  address_state = info.css("span[itemprop=addressRegion]").text.strip
-  address_zip = info.css("span[itemprop=postalCode]").text.strip
+  venue = event_info.css("span[itemprop=name]").text.strip
+
+  address_street = event_info.css("span[itemprop=streetAddress]").text.strip
+  address_city = event_info.css("span[itemprop=addressLocality]").text.strip
+  address_state = event_info.css("span[itemprop=addressRegion]").text.strip
+  address_zip = event_info.css("span[itemprop=postalCode]").text.strip
   address_full = "#{address_street}, #{address_city}, #{address_state}, #{address_zip}"
 
   start_date_time = info.css("p")[0].css("span")[0].attributes["content"].value
+  # start_date_time = event_info.css("span[itemprop=startDate]").attributes["content"].value
   start_date_time = Time.parse(start_date_time)
 
   end_date_time = info.css("p")[0].css("span")[1].attributes["content"].value
@@ -49,12 +53,8 @@ url_array.each do |url|
   cost = 0
   if info.css("p")[2].children.children[1].text.strip == ""
     cost = info.css("p")[2].children.children.children.text.strip
-    if cost == "FREE"
-      cost = 0
-    end
   else
     cost = info.css("p")[2].children.children[1].text.strip
-    cost[0] = ''
   end
 
   website = ""
@@ -66,5 +66,15 @@ url_array.each do |url|
 
   recurring = true
 
-  puts "Event.create!(name: \"#{name}\", venue: \"#{venue}\", address: \"#{address_full}\", start_date_time: \"#{start_date_time}\", end_date_time: \"#{end_date_time}\", cost: #{cost}, website: \"#{website}\", description: \"#{description}\", recurring: #{recurring})\n\n"
+  Event.create!(
+    name: "#{name}",
+    venue: "#{venue}",
+    address: "#{address_full}",
+    start_date_time: "#{start_date_time}",
+    end_date_time: "#{end_date_time}",
+    cost: `#{cost}`,
+    website: "#{website}",
+    description: "#{description}",
+    recurring: "#{recurring}"
+  )
 end

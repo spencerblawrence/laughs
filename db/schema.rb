@@ -17,12 +17,16 @@ ActiveRecord::Schema.define(version: 2019_02_04_202948) do
 
   create_table "events", force: :cascade do |t|
     t.string "name", null: false
-    t.text "description"
-    t.string "location", null: false
-    t.string "cost", null: false
+    t.string "venue", null: false
+    t.string "address", null: false
     t.datetime "start_date_time", null: false
     t.datetime "end_date_time"
+    t.integer "cost", null: false
     t.string "website"
+    t.text "description"
+    t.boolean "recurring"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

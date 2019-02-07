@@ -2,6 +2,7 @@ import React from "react";
 import { Router, browserHistory, Route, IndexRoute } from "react-router";
 import EventsIndexContainer from "../containers/EventsIndexContainer";
 import EventShowContainer from "../containers/EventShowContainer";
+import NewShowContainer from "../containers/NewShowContainer";
 import SplashPage from "./SplashPage";
 
 export const App = props => {
@@ -9,6 +10,7 @@ export const App = props => {
     <Router history={browserHistory}>
       <Route path="/" component={EventsIndexContainer} />
       <Route path="/events" component={EventsIndexContainer} />
+      <Route path="/events/new" component={NewShowContainer} />
       <Route path="/events/:id" component={EventShowContainer} />
     </Router>
   );

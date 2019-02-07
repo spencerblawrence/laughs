@@ -1,0 +1,9 @@
+# from the daypicker jsx block line 154ish in NewShowContainer
+# <p>You selected {this.state.selectedDay.toLocaleDateString()}</p>
+
+# this is how you do an if/else in JSX
+# {this.state.selectedDay ? (
+#   <p>You selected {this.state.selectedDay}</p>
+# ) : (
+#   <p>Please select a day.</p>
+# )}
