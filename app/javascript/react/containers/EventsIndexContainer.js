@@ -40,16 +40,17 @@ class EventsIndexContainer extends Component {
 
     return (
       <div className="grid-container">
-        <div className="grid-x">
-          <Link to={`/events/new`}>
-            <div className="cell shrink callout"><p>Submit a New Show</p></div>
-          </Link>
+        <div className="grid-x grid-margin-x grid-margin-y home-button-row">
+          <div className="cell small-12">
+            <Link to={`/events/new`}>
+              <button className="button radius">Submit a New Show</button>
+            </Link>
+          </div>
         </div>
-        <div className="callout columns small-2">
-          <p>Hello</p>
-        </div>
-        <div>
-          {events}
+        <div className="grid-x grid-margin-x">
+          <div className="cell small-12">
+            {events}
+          </div>
         </div>
       </div>
     )

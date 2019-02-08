@@ -1,8 +1,29 @@
+@import 'settings';
+
+.home-button-row {
+  margin-top: 10px;
+}
+
+button.radius, .button.radius {
+ border-radius: 5px; }
+button.round, .button.round {
+ border-radius: 1000px; }
+
 .button-fantastic {
   color: #004e66;
   background-color: #fcbe32;
   text-align: center;
   padding-top: 5px;
   vertical-align: middle;
+}
 
+.button-1 {
+  color: white;
+}
+
+.button-spencer {
+  background-color: #fcbe32;
+  color: #004e66;
+  border-radius: 5px;
+  text-align: center;
 }

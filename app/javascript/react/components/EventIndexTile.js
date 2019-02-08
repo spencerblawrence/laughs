@@ -8,8 +8,8 @@ const EventIndexTile = props => {
   }
 
   return (
-    <div className="callout columns small-10">
-      <h2 className="title">{props.event.name}</h2>
+    <div className="callout columns small-10 event-index-tile">
+      <div className="font-slab text3 weight7">{props.event.name}</div>
       <p>{props.event.venue}</p>
       <p>{props.event.address}</p>
       <p>{props.event.started_at_date}</p>
@@ -17,7 +17,6 @@ const EventIndexTile = props => {
       <p>${props.event.cost}</p>
       <p>{cost}</p>
       <Link to={`/events/${props.id}`}><p>Learn More</p></Link>
-      <br />
     </div>
   );
 };

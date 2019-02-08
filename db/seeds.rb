@@ -2,9 +2,9 @@ Event.create!(name: "Liquid Courage Comedy Club", venue: "Somerville Brewing Com
 
 Event.create!(name: "Comedy Sundays @ The Green Briar", venue: "The Green Briar Pub", address: "304 Washington St, Brighton, MA, 02135", start_date_time: "2019-02-03 20:00:00 -0500", end_date_time: "2019-02-03 22:00:00 -0500", cost: 0, website: "http://www.greenbriarpub.com/event-calendar/comedy-sundays-8-pm", description: "", recurring: true)
 
-Event.create!(name: "Midway Or The Highway Comedy", venue: "Midway Cafe", address: "3496 Washington Street, Jamaica Plain, MA, 02130", start_date_time: "2019-02-03 21:00:00 -0500", end_date_time: "2019-02-03 23:59:00 -0500", cost: 0, website: "www.midwayorthehighway.com", description: "", recurring: true)
+Event.create!(name: "Midway Or The Highway Comedy", venue: "Midway Cafe", address: "3496 Washington Street, Jamaica Plain, MA, 02130", start_date_time: "2019-02-03 21:00:00 -0500", end_date_time: "2019-02-03 23:59:00 -0500", cost: 0, website: "http://www.midwayorthehighway.com", description: "", recurring: true)
 
-Event.create!(name: "McGreevy's FREE COMEDY: Every Monday & Tuesday", venue: "McGreevy's Boston", address: "911 Boylston St., Boston, MA, 02115", start_date_time: "2019-02-04 20:00:00 -0500", end_date_time: "2019-02-04 21:30:00 -0500", cost: 0, website: "not found", description: "", recurring: true)
+Event.create!(name: "McGreevy's FREE COMEDY: Every Monday & Tuesday", venue: "McGreevy's Boston", address: "911 Boylston St., Boston, MA, 02115", start_date_time: "2019-02-04 20:00:00 -0500", end_date_time: "2019-02-04 21:30:00 -0500", cost: 0, website: "", description: "", recurring: true)
 
 Event.create!(name: "The Mendoza Line Comedy Show", venue: "Dugout Cafe", address: "722 Commonwealth Avenue, Boston, MA, 02215", start_date_time: "2019-02-09 21:00:00 -0500", end_date_time: "2019-02-09 23:00:00 -0500", cost: 5, website: "https://www.eventbrite.com/e/the-mendoza-line-comedy-show-tickets-15228587114", description: "", recurring: true)
 

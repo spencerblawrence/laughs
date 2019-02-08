@@ -69,15 +69,19 @@ class EventShowContainer extends Component {
     }
     return (
       <div className="grid-container">
-        <div className="callout">
-          <h2 className="title">{this.state.event.name}</h2>
-          <p>{this.state.event.venue}</p>
-          <p>{this.state.event.address}</p>
-          <p>{this.state.event.started_at_date}</p>
-          <p>{this.state.event.started_at_time}</p>
-          <p>${this.state.event.cost}</p>
-          <p>{cost}</p>
-          <div className="button button-fantastic" onClick={this.signupClick}><p>{this.state.signup_button_text}</p></div>
+        <div className="grid-x grid-margin-x grid-margin-y">
+          <div className="cell small-12">
+            <div className="callout event-show-tile">
+              <div className="font-slab text3 weight7">{this.state.event.name}</div>
+              <p>{this.state.event.venue}</p>
+              <p>{this.state.event.address}</p>
+              <p>{this.state.event.started_at_date}</p>
+              <p>{this.state.event.started_at_time}</p>
+              <p>${this.state.event.cost}</p>
+              <p>{cost}</p>
+              <div className="button radius" onClick={this.signupClick}>{this.state.signup_button_text}</div>
+            </div>
+          </div>
         </div>
       </div>
     );
