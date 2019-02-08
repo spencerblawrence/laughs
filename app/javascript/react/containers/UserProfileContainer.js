@@ -39,11 +39,17 @@ class UserProfileContainer extends Component {
     });
 
     return (
-      <div className="grid-container grid-x align-center">
-        <div className="callout cell small-12">
-          <h1 className="text1">Hello from user profile container</h1>
-          <p>{this.state.email}</p>
-          {events}
+      <div className="grid-container">
+        <div className="grid-x grid-margin-x grid-margin-y">
+          <div className="cell small-12">
+            <div className="profile-show-container">
+              <div className="font-slab text1 weight7">User Profile</div>
+              <div className="text6 weight3">{this.state.email}</div>
+              <br />
+              <div className="font-slab text1 weight7">Here are your upcoming shows:</div>
+              {events}
+            </div>
+          </div>
         </div>
       </div>
     );

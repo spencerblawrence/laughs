@@ -1,0 +1,42 @@
+.event-index-tile {
+  border-radius: 6px;
+  border-color: white;
+}
+
+.event-show-tile {
+  border-radius: 6px;
+  border-color: white;
+  margin-top: 30px;
+}
+
+.profile-show-container {
+  border-radius: 6px;
+  border-color: white;
+  margin-top: 30px;
+}
+
+// FORMS
+
+.form {
+  width: 60%;
+  padding-top: 50px;
+}
+
+.rails-field {
+  width: 80%;
+  margin: 0px;
+  border-radius: 5px;
+}
+
+// UTILITIES
+
+.center-content {
+    display: flex;
+    vertical-align: middle;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 60vw;
+    margin: auto;
+}

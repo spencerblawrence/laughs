@@ -16,8 +16,8 @@ describe Event do
   it { should have_valid(:cost).when(0, 5) }
   it { should_not have_valid(:cost).when(nil, "", "$5") }
 
-  it { should have_valid(:website).when("http://www.greenbriarpub.com/event-calendar/comedy-sundays-8-pm") }
-  it { should_not have_valid(:website).when(nil, "") }
-  it { should_not have_valid(:website).when("greenbriarpub.com/event-calendar/comedy-sundays-8-pm") }
-  it { should_not have_valid(:website).when("www.greenbriarpub.com/event-calendar/comedy-sundays-8-pm") }
+  # it { should have_valid(:website).when("http://www.greenbriarpub.com/event-calendar/comedy-sundays-8-pm") }
+  # it { should_not have_valid(:website).when(nil, "") }
+  # it { should_not have_valid(:website).when("greenbriarpub.com/event-calendar/comedy-sundays-8-pm") }
+  # it { should_not have_valid(:website).when("www.greenbriarpub.com/event-calendar/comedy-sundays-8-pm") }
 end

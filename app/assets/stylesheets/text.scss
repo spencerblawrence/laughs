@@ -1,18 +1,5 @@
-// Arvo:700|Lobster|Roboto+Slab
-
-.button-1 {
-  color: white;
-}
-
-* {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  color: #5C5C5C;
-}
-
-h1 h2 h3 h4 h5 h6 {
-  font-family: 'Roboto', sans-serif;
-  color: #5C5C5C;
+.font-slab {
+  font-family: 'Roboto Slab', serif;
 }
 
 .weight1 {
@@ -33,19 +20,22 @@ h1 h2 h3 h4 h5 h6 {
 
 .text1 {
   font-size: 2.3rem;
-  font-family: 'Roboto Slab', serif;
 }
 
 .text2 {
-  font-size: 1.5rem;
+  font-size: 2.0rem;
 }
 
 .text3 {
-  font-size: 1.0rem;
+  font-size: 1.7rem;
 }
 
 .text4 {
-  font-size: .75rem;
+  font-size: 1.4rem;
+}
+
+.text5 {
+  font-size: 1.1rem;
 }
 
 .text-center {
@@ -60,14 +50,12 @@ h1 h2 h3 h4 h5 h6 {
   text-align: left;
 }
 
+// aligns items within it
 .align-center {
-
     -webkit-box-pack: center;
-
     -webkit-justify-content: center;
-
     -ms-flex-pack: center;
-
     justify-content: center;
-
+    margin: auto;
+    text-align: center;
 }
