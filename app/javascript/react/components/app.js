@@ -3,6 +3,7 @@ import { Router, browserHistory, Route, IndexRoute } from "react-router";
 import EventsIndexContainer from "../containers/EventsIndexContainer";
 import EventShowContainer from "../containers/EventShowContainer";
 import NewShowContainer from "../containers/NewShowContainer";
+import UserProfileContainer from "../containers/UserProfileContainer";
 import SplashPage from "./SplashPage";
 
 export const App = props => {
@@ -12,6 +13,7 @@ export const App = props => {
       <Route path="/events" component={EventsIndexContainer} />
       <Route path="/events/new" component={NewShowContainer} />
       <Route path="/events/:id" component={EventShowContainer} />
+      <Route path="/users/:id" component={UserProfileContainer} />
     </Router>
   );
 };

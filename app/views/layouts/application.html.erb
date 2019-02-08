@@ -20,6 +20,7 @@
       <div class="top-bar-right">
         <ul class="menu">
           <%- if current_user -%>
+            <li class="button-nav"><%= link_to 'My Profile', user_path(current_user.id) %></li>
             <li class="button-nav"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
           <%- else -%>
             <li class="button-nav"><%= link_to 'Sign Up', new_user_registration_path %></li>

@@ -8,6 +8,11 @@ class Event < ApplicationRecord
 
   before_validation :set_started_at
 
+  has_many :signups
+  has_many :users, through: :signups
+
+  attr_reader :started_at_date, :started_at_time
+
   # this is a getter
   def started_at_date
     if !@started_at_date_string
