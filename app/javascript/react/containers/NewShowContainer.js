@@ -72,7 +72,6 @@ class NewShowContainer extends Component {
   }
 
   addNewShow(formPayload) {
-    console.log(formPayload)
     fetch("/api/v1/events", {
       credentials: "same-origin",
       method: "POST",
