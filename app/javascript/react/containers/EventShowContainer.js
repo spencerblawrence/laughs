@@ -70,8 +70,13 @@ class EventShowContainer extends Component {
     return (
       <div className="grid-container">
         <div className="grid-x grid-margin-x grid-margin-y">
-          <div className="cell small-12">
-            <div className="callout event-show-tile">
+          <div className="cell small-12"></div>
+          <div className="cell small-12 callout event-show-tile">
+            <div className="grid-x">
+            <div className="cell small-3">
+              <img className="event-index-tile-image" src={this.state.event.image_url} />
+            </div>
+            <div className="cell small-9 event-index-tile-text">
               <div className="font-slab text3 weight7">{this.state.event.name}</div>
               <p>{this.state.event.venue}</p>
               <p>{this.state.event.address}</p>
@@ -80,6 +85,7 @@ class EventShowContainer extends Component {
               <p>${this.state.event.cost}</p>
               <p>{cost}</p>
               <div className="button radius" onClick={this.signupClick}>{this.state.signup_button_text}</div>
+            </div>
             </div>
           </div>
         </div>

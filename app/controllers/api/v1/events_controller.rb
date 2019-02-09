@@ -3,6 +3,7 @@ class Api::V1::EventsController < ApplicationController
 
   def index
     render json: Event.all
+    # render json: Event.all.sort(:column_name :desc)
   end
 
   def show
@@ -22,7 +23,7 @@ class Api::V1::EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:name, :venue, :address, :started_at_date, :started_at_time, :start_date_time, :end_date_time, :cost, :website, :description, :recurring)
+    params.require(:event).permit(:name, :venue, :address, :started_at_date, :started_at_time, :start_date_time, :end_date_time, :cost, :website, :description, :recurring, :image_url)
   end
 end
 

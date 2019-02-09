@@ -3,6 +3,14 @@
   border-color: white;
 }
 
+.event-index-tile-image {
+  border-radius: 6px;
+}
+
+.event-index-tile-text {
+  padding-left: 20px;
+}
+
 .event-show-tile {
   border-radius: 6px;
   border-color: white;
@@ -18,14 +26,23 @@
 // FORMS
 
 .form {
-  width: 60%;
+  width: 40%;
+  border-radius: 6px;
+}
+
+.form-rails {
+  max-width: 400px;
   padding-top: 50px;
+  margin: auto;
+}
+
+.new-show-form {
+  margin-top: 300px;
 }
 
 .rails-field {
-  width: 80%;
-  margin: 0px;
   border-radius: 5px;
+  margin-top: 50px;
 }
 
 // UTILITIES
@@ -39,4 +56,8 @@
     height: 100%;
     width: 60vw;
     margin: auto;
+}
+
+.center-div {
+  margin: auto;
 }
