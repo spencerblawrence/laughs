@@ -14,6 +14,7 @@ class NewShowContainer extends Component {
       cost: 0,
       website: "",
       description: "",
+      image_url: "",
       errors: []
     };
 
@@ -51,9 +52,11 @@ class NewShowContainer extends Component {
         started_at_time: this.state.started_at_time,
         cost: this.state.cost,
         website: this.state.website,
-        description: this.state.description
+        description: this.state.description,
+        image_url: this.state.image_url
       }
     };
+    debugger
     this.addNewShow(formPayload);
     this.handleClear();
   }
@@ -67,6 +70,7 @@ class NewShowContainer extends Component {
       cost: "",
       website: "",
       description: "",
+      image_url: "",
       errors: []
     });
   }
@@ -111,77 +115,87 @@ class NewShowContainer extends Component {
       }
 
       return (
-        <div className="grid-container grid-x align-center">
-          <div className="callout cell small-12">
-            <h1 className="text1">Create a Show</h1>
-            {errorDiv}
-            <form onSubmit={this.handleSubmit}>
-              <InputField
-                label="Show Name"
-                name="name"
-                type="text"
-                content={this.state.name}
-                onChange={this.handleInputChange}
-                />
-              <InputField
-                label="Venue"
-                name="venue"
-                type="text"
-                content={this.state.venue}
-                onChange={this.handleInputChange}
-                />
-              <InputField
-                label="Address (eg 144 Main St., Somerville, MA 02144)"
-                name="address"
-                type="text"
-                content={this.state.address}
-                onChange={this.handleInputChange}
-                />
-              <div>
-                <p>What date is the show?</p>
-                {this.state.started_at_date ? (
-                  <p>You selected {this.state.started_at_date.toDateString()}</p>
-                ) : (
-                  <p>Please select a day.</p>
-                )}
-                <DayPicker
-                  onDayClick={this.handleDayClick}
-                  selectedDays={this.state.started_at_date}
+        <div className="grid-container">
+          <div className="grid-x grid-margin-x grid-margin-y">
+            <div className="cell small-12"></div>
+            <div className="form callout cell small-12">
+              <h1 className="text1">Create a Show</h1>
+              {errorDiv}
+              <form onSubmit={this.handleSubmit}>
+                <InputField
+                  label="Show Name"
+                  name="name"
+                  type="text"
+                  content={this.state.name}
+                  onChange={this.handleInputChange}
                   />
-              </div>
-              <InputField
-                label="Time"
-                name="started_at_time"
-                type="time"
-                content={this.state.started_at_time}
-                onChange={this.handleInputChange}
-                />
-              <InputField
-                label="Cost ($)"
-                name="cost"
-                type="number"
-                content={this.state.cost}
-                onChange={this.handleInputChange}
-                />
-              <InputField
-                label="Website"
-                name="website"
-                type="url"
-                content={this.state.website}
-                onChange={this.handleInputChange}
-                />
-              <InputField
-                label="Description"
-                name="description"
-                type="text"
-                content={this.state.description}
-                onChange={this.handleInputChange}
-                />
-              <div className="button-group">
-                <input className="button radius" type="submit" value="Submit" />
-                <button className="button radius" onClick={this.handleClear}>Clear</button>
-              </div>
-            </form>
+                <InputField
+                  label="Venue"
+                  name="venue"
+                  type="text"
+                  content={this.state.venue}
+                  onChange={this.handleInputChange}
+                  />
+                <InputField
+                  label="Address (eg 144 Main St., Somerville, MA 02144)"
+                  name="address"
+                  type="text"
+                  content={this.state.address}
+                  onChange={this.handleInputChange}
+                  />
+                <div>
+                  <p>What date is the show?</p>
+                  {this.state.started_at_date ? (
+                    <p>You selected {this.state.started_at_date.toDateString()}</p>
+                  ) : (
+                    <p>Please select a day.</p>
+                  )}
+                  <DayPicker
+                    onDayClick={this.handleDayClick}
+                    selectedDays={this.state.started_at_date}
+                    />
+                </div>
+                <InputField
+                  label="Time"
+                  name="started_at_time"
+                  type="time"
+                  content={this.state.started_at_time}
+                  onChange={this.handleInputChange}
+                  />
+                <InputField
+                  label="Cost ($)"
+                  name="cost"
+                  type="number"
+                  content={this.state.cost}
+                  onChange={this.handleInputChange}
+                  />
+                <InputField
+                  label="Website"
+                  name="website"
+                  type="url"
+                  content={this.state.website}
+                  onChange={this.handleInputChange}
+                  />
+                <InputField
+                  label="Description"
+                  name="description"
+                  type="text"
+                  content={this.state.description}
+                  onChange={this.handleInputChange}
+                  />
+                <InputField
+                  label="Image URL"
+                  name="image_url"
+                  type="url"
+                  content={this.state.image_url}
+                  onChange={this.handleInputChange}
+                  />
+                <div className="button-group">
+                  <input className="button radius" type="submit" value="Submit" />
+                  <button className="button radius" onClick={this.handleClear}>Clear</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       );

@@ -1,7 +1,6 @@
 <div class="grid-container">
-  <div class="grid-x grid-margin-x">
-    <div class="cell form">
-      <div class="">
+  <div class="grid-x grid-margin-x grid-margin-y">
+    <div class="cell form-rails">
 
         <div class="font-slab text1 weight7">Sign Up</div>
 
@@ -9,33 +8,32 @@
         <%= devise_error_messages! %>
 
         <div>
-          <%= f.label :email, class: "weight3 text4" %><p><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "rails-field" %>
-          </div>
-
-          <div class="field">
-            <%= f.label :password, class: "weight3 text4" %>
-            <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <% end %><br />
-            <%= f.password_field :password, autocomplete: "new-password", class: "rails-field" %>
-          </div>
-
-          <div class="field">
-            <%= f.label :password_confirmation, class: "weight3 text4" %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "rails-field" %>
-          </div>
-
-          <div class="actions">
-            <%= f.submit "Sign Up", class: "button radius" %>
-          </div>
-
-          <div class="actions">
-            <%= render "devise/shared/links", class: "button radius" %>
-          </div>
-          <% end %>
-
+          <%= f.label :email, class: "weight3 text4" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "rails-field" %>
         </div>
-      </div>
+
+        <div>
+          <%= f.label :password, class: "weight3 text4" %>
+          <% if @minimum_password_length %>
+            <% @min_pw_length_string = "#{@minimum_password_length} characters minimum" %>
+          <% end %>
+          <%= f.password_field :password, autocomplete: "new-password", class: "rails-field", placeholder: @min_pw_length_string %>
+        </div>
+
+        <div>
+          <%= f.label :password_confirmation, class: "weight3 text4" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "rails-field" %>
+        </div>
+
+        <div>
+          <%= f.submit "Sign Up", class: "button expand radius" %>
+        </div>
+
+        <div>
+          <%= render "devise/shared/links" %>
+        </div>
+        <% end %>
+
     </div>
   </div>
+</div>

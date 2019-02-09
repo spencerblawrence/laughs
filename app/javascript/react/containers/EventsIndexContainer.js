@@ -48,9 +48,7 @@ class EventsIndexContainer extends Component {
           </div>
         </div>
         <div className="grid-x grid-margin-x">
-          <div className="cell small-12">
-            {events}
-          </div>
+          {events}
         </div>
       </div>
     )
