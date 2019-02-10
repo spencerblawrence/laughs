@@ -8,7 +8,8 @@ class Map extends Component {
         defaultCenter = { { lat: 42.3601, lng: -71.0589 } }
         defaultZoom = { 11 }
         >
-        {props.isMarkerShown && <Marker position={{ lat: 42.3601, lng: -71.0589 }} />}
+        <Marker position={{ lat: 42.3601, lng: -71.0589 }} />
+        <Marker position={{ lat: 42.382419, lng: -71.101697 }} />
       </GoogleMap>
     ));
 
@@ -26,3 +27,6 @@ class Map extends Component {
 };
 
 export default Map;
+
+// {props.isMarkerShown && <Marker position={{ lat: 42.3601, lng: -71.0589 }} />}
+// 42.382419, -71.101697

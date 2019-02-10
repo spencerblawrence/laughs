@@ -1,9 +1,9 @@
 class Event < ApplicationRecord
-  validates :name, presence: true
-  validates :venue, presence: true
-  validates :address, presence: true
-  validates :start_date_time, presence: true
-  validates :cost, presence: true, numericality: { only_integer: true }
+  # validates :name, presence: true
+  # validates :venue, presence: true
+  # validates :address, presence: true
+  # validates :start_date_time, presence: true
+  # validates :cost, presence: true, numericality: { only_integer: true }
   # validates :website, :format => URI::regexp(%w(www http https))
 
   before_validation :set_started_at

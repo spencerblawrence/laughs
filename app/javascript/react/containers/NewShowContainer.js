@@ -56,7 +56,6 @@ class NewShowContainer extends Component {
         image_url: this.state.image_url
       }
     };
-    debugger
     this.addNewShow(formPayload);
     this.handleClear();
   }

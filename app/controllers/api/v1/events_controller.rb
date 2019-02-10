@@ -1,4 +1,5 @@
 class Api::V1::EventsController < ApplicationController
+  include Geokit::Geocoders
   protect_from_forgery unless: -> { request.format.json? }
 
   def index
@@ -11,7 +12,16 @@ class Api::V1::EventsController < ApplicationController
   end
 
   def create
+    @key = ENV["GOOGLE_MAPS_API_KEY"]
     event = Event.new(event_params)
+    geo_loc = MultiGeocoder.geocode(event_params[:address])
+    if geo_loc.success
+      binding.pry
+      puts geo_loc.lat
+      puts geo_loc.lng
+      puts geo_loc.full_address
+    end
+    binding.pry
     # event.user = current_user
 
     if event.save
