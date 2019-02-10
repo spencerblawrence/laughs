@@ -63,3 +63,4 @@ gem 'rb-readline', group: [:development, :test]
 gem 'active_model_serializers'
 gem 'foundation-rails'
 gem 'autoprefixer-rails'
+gem 'geokit-rails'

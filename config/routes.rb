@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   root 'events#index'
   devise_for :users
 
+  # from https://guides.rubyonrails.org/routing.html - can show user profile without id
+  get 'profile', to: 'users#show'
+
   resources :events
   resources :users
 
