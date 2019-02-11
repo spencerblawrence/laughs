@@ -3,7 +3,7 @@ class Api::V1::EventsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
   def index
-    render json: Event.all
+    render json: Event.all.order(start_date_time: :asc)
     # render json: Event.all.sort(:column_name :desc)
   end
 
