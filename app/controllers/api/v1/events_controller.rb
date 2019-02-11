@@ -1,4 +1,5 @@
 class Api::V1::EventsController < ApplicationController
+  include Geokit::Geocoders
   protect_from_forgery unless: -> { request.format.json? }
 
   def index
@@ -12,6 +13,9 @@ class Api::V1::EventsController < ApplicationController
 
   def create
     event = Event.new(event_params)
+    geo_loc = MultiGeocoder.geocode(event_params[:address])
+    event.lat = geo_loc.lat
+    event.lng = geo_loc.lng
     # event.user = current_user
 
     if event.save

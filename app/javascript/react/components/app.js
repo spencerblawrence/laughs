@@ -14,6 +14,7 @@ export const App = props => {
       <Route path="/events/new" component={NewShowContainer} />
       <Route path="/events/:id" component={EventShowContainer} />
       <Route path="/users/:id" component={UserProfileContainer} />
+      <Route path="/profile" component={UserProfileContainer} />
     </Router>
   );
 };

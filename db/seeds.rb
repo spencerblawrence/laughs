@@ -8,7 +8,9 @@ Event.create!(
   website: "https://www.facebook.com/liquidcouragecomedy",
   description: "",
   recurring: true,
-  image_url: "https://s3.amazonaws.com/laughs-development/events/liquid_courage.jpg"
+  image_url: "https://s3.amazonaws.com/laughs-development/events/liquid_courage.jpg",
+  lat: 42.374940,
+  lng: -71.089440
 )
 
 Event.create!(
@@ -21,7 +23,9 @@ Event.create!(
   website: "http://www.midwayorthehighway.com",
   description: "",
   recurring: true,
-  image_url: "https://s3.amazonaws.com/laughs-development/events/midway_cafe.jpg"
+  image_url: "https://s3.amazonaws.com/laughs-development/events/midway_cafe.jpg",
+  lat: 42.306240,
+  lng: -71.107470
 )
 
 Event.create!(
@@ -34,7 +38,9 @@ Event.create!(
   website: "",
   description: "",
   recurring: true,
-  image_url: "https://s3.amazonaws.com/laughs-development/events/mcgreevys.jpg"
+  image_url: "https://s3.amazonaws.com/laughs-development/events/mcgreevys.jpg",
+  lat: 42.348430,
+  lng: -71.084400
 )
 
 Event.create!(
@@ -47,7 +53,9 @@ Event.create!(
   website: "",
   description: "",
   recurring: true,
-  image_url: "https://s3.amazonaws.com/laughs-development/events/mcgreevys.jpg"
+  image_url: "https://s3.amazonaws.com/laughs-development/events/mcgreevys.jpg",
+  lat: 42.348430,
+  lng: -71.084400
 )
 
 Event.create!(
@@ -60,7 +68,9 @@ Event.create!(
   website: "https://www.eventbrite.com/e/the-mendoza-line-comedy-show-tickets-15228587114",
   description: "",
   recurring: true,
-  image_url: "https://s3.amazonaws.com/laughs-development/events/mendoza_line.png"
+  image_url: "https://s3.amazonaws.com/laughs-development/events/mendoza_line.png",
+  lat: 42.349590,
+  lng: -71.105980
 )
 
 Event.create!(
@@ -73,7 +83,9 @@ Event.create!(
   website: "https://billsbarcomedy.eventbrite.com/?aff=BillsBostonCalendar",
   description: "",
   recurring: true,
-  image_url: "https://s3.amazonaws.com/laughs-development/events/bills_bar.jpg"
+  image_url: "https://s3.amazonaws.com/laughs-development/events/bills_bar.jpg",
+  lat: 42.347350,
+  lng: -71.094950
 )
 
 Event.create!(
@@ -86,7 +98,9 @@ Event.create!(
   website: "https://billsbarcomedy.eventbrite.com/?aff=BillsBostonCalendar",
   description: "",
   recurring: true,
-  image_url: "https://s3.amazonaws.com/laughs-development/events/bills_bar.jpg"
+  image_url: "https://s3.amazonaws.com/laughs-development/events/bills_bar.jpg",
+  lat: 42.347350,
+  lng: -71.094950
 )
 
 Event.create!(
@@ -99,5 +113,7 @@ Event.create!(
   website: "https://billsbarcomedy.eventbrite.com/?aff=BillsBostonCalendar",
   description: "",
   recurring: true,
-  image_url: "https://s3.amazonaws.com/laughs-development/events/bills_bar.jpg"
+  image_url: "https://s3.amazonaws.com/laughs-development/events/bills_bar.jpg",
+  lat: 42.347350,
+  lng: -71.094950
 )
