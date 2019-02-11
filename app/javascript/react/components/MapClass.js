@@ -9,8 +9,9 @@ class MapClass extends Component {
     this.onMarkerClick = this.onMarkerClick.bind(this)
   }
 
-  onMarkerClick() {
+  onMarkerClick(event) {
     console.log("Hello!")
+    console.log(event)
   }
 
   render() {
@@ -19,7 +20,7 @@ class MapClass extends Component {
         <Marker
           key={event.id}
           position={{ lat: event.lat, lng: event.lng }}
-          onClick={this.onMarkerClick}
+          onClick={this.onMarkerClick(event)}
           // label={event.name}
           />
       );
