@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import EventIndexTile from "../components/EventIndexTile";
-import Map from "../components/Map";
-import MyMapComponent from "../components/MapComponent";
+import MapClass from "../components/MapClass";
+import MyMapComponent from "../components/MyMapComponent";
+import MapWithAMakredInfoWindow from "../components/MapTest";
 import { Link } from "react-router";
 
 class EventsIndexContainer extends Component {
@@ -59,15 +60,17 @@ class EventsIndexContainer extends Component {
 
     let map;
     if (this.state.map_status == true) {
-      map = <Map />
+      map = <MapClass
+        events={this.state.events}
+        />
     }
 
     return (
       <div className="grid-container">
       <div className="grid-x grid-margin-x grid-margin-y">
           <div className="cell small-12 home-button-row">
-            <Link to={`/events/new`}><button className="button radius">Submit a New Show</button></Link>
-            <button className="button radius" onClick={this.toggleMap}>{this.state.map_button_text}</button>
+            <Link to={`/events/new`}><button className="button radius spacer">Submit a New Show</button></Link>
+            <button className="button radius spacer" onClick={this.toggleMap}>{this.state.map_button_text}</button>
           </div>
         </div>
         {map}
@@ -80,11 +83,3 @@ class EventsIndexContainer extends Component {
 }
 
 export default EventsIndexContainer;
-
-// <MyMapComponent
-//   isMarkerShown
-//   googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-//   loadingElement={<div style={{ height: `100%` }} />}
-//   containerElement={<div style={{ height: `400px` }} />}
-//   mapElement={<div style={{ height: `100%` }} />}
-// />
