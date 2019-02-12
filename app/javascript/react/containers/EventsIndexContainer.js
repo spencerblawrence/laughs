@@ -130,23 +130,3 @@ class EventsIndexContainer extends Component {
 }
 
 export default EventsIndexContainer;
-
-// let filterDiv;
-// if (this.state.filter_status == true) {
-//   filterDiv =
-//   <div className="callout cell shrink small-10">
-//     <div>
-//       How much are you willing to spend? &nbsp;
-//       <input type="range" min="0" max="25" step="5" name="max_price" value={this.state.max_price} onChange={this.handleInputChange} />
-//       &nbsp; ${this.state.max_price}
-//     </div>
-//     <div>
-//       How far out do you want to look? &nbsp;
-//       <input type="range" min="0" max="21" step="1" name="days_out" value={this.state.days_out} onChange={this.handleInputChange} />
-//       &nbsp; {this.state.days_out} days out, shows up until {moment(daysOutDate).format('dddd MMMM Do')}
-//     </div>
-//     <div>
-//       # of shows that meet your criteria: <b>{events_filtered.length}</b>
-//     </div>
-//   </div>
-// }
