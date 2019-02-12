@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import moment from 'moment';
 import EventIndexTile from "../components/EventIndexTile";
 import MapClass from "../components/MapClass";
-import MyMapComponent from "../components/MyMapComponent";
-import MapWithAMakredInfoWindow from "../components/MapTest";
+import Filters from "../components/Filters";
 import { Link } from "react-router";
 
 class EventsIndexContainer extends Component {
@@ -22,7 +21,27 @@ class EventsIndexContainer extends Component {
     this.toggleMap = this.toggleMap.bind(this)
     this.toggleFilters = this.toggleFilters.bind(this)
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.stringifyDate = this.stringifyDate.bind(this);
+  }
+
+  componentDidMount() {
+    fetch("/api/v1/events")
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage);
+        throw error;
+      }
+    })
+    .then(response => {
+      let events = response.json();
+      return events;
+    })
+    .then(events => {
+      this.setState({ events: events["events"] });
+    })
+    .catch(error => console.log(`Error in fetch: ${error.message}`));
   }
 
   handleInputChange(event) {
@@ -60,46 +79,6 @@ class EventsIndexContainer extends Component {
     }
   }
 
-  componentDidMount() {
-    fetch("/api/v1/events")
-    .then(response => {
-      if (response.ok) {
-        return response;
-      } else {
-        let errorMessage = `${response.status} (${response.statusText})`,
-        error = new Error(errorMessage);
-        throw error;
-      }
-    })
-    .then(response => {
-      let events = response.json();
-      return events;
-    })
-    .then(events => {
-      this.setState({ events: events["events"] });
-    })
-    .catch(error => console.log(`Error in fetch: ${error.message}`));
-  }
-
-  stringifyDate(date) {
-    debugger
-    let dd = date.getDate();
-    let mm = date.getMonth() + 1; // January is 0!
-
-    let weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
-    let dayOfWeek = weekday[date.getDay()];
-
-    if (dd < 10) {
-      dd = '0' + dd;
-    }
-
-    if (mm < 10) {
-      mm = '0' + mm;
-    }
-
-    return `${dayOfWeek} ${mm}/${dd}`;
-  }
-
   render() {
     let today = moment().format()
     let daysOutDate = moment().add(this.state.days_out, 'day').format()
@@ -113,34 +92,23 @@ class EventsIndexContainer extends Component {
         );
       }
     });
-    console.log(events_filtered)
 
     let map;
     if (this.state.map_status == true) {
-      map = <MapClass
-        events={events_filtered}
-        />
+      map = <MapClass events={events_filtered} />
     }
 
-    let filterDiv;
+    let filters;
     if (this.state.filter_status == true) {
-      filterDiv =
-      <div className="callout cell shrink small-10">
-        <div>
-          How much are you willing to spend? &nbsp;
-          <input type="range" min="0" max="25" step="5" name="max_price" value={this.state.max_price} onChange={this.handleInputChange} />
-          &nbsp; ${this.state.max_price}
-        </div>
-        <div>
-          How far out do you want to look? &nbsp;
-          <input type="range" min="0" max="21" step="1" name="days_out" value={this.state.days_out} onChange={this.handleInputChange} />
-          &nbsp; {this.state.days_out} days out, shows up until {moment(daysOutDate).format('dddd MMMM Do')}
-        </div>
-        <div>
-          # of shows that meet your criteria: <b>{events_filtered.length}</b>
-        </div>
-      </div>
-    }
+      filters = <Filters
+                    filterStatus={this.state.filter_status}
+                    maxPrice={this.state.max_price}
+                    onChange={this.handleInputChange}
+                    daysOutState={this.state.days_out}
+                    eventsNo={events_filtered.length}
+                    daysOutDate={daysOutDate}
+                    />
+                }
 
     return (
       <div className="grid-container">
@@ -149,7 +117,7 @@ class EventsIndexContainer extends Component {
             <Link to={`/events/new`}><button className="button radius spacer">Submit a New Show</button></Link>
             <button className="button radius spacer" onClick={this.toggleMap}>{this.state.map_button_text}</button>
             <button className="button radius spacer" onClick={this.toggleFilters}>{this.state.filter_button_text}</button>
-            {filterDiv}
+            {filters}
           </div>
         </div>
         {map}
@@ -162,3 +130,23 @@ class EventsIndexContainer extends Component {
 }
 
 export default EventsIndexContainer;
+
+// let filterDiv;
+// if (this.state.filter_status == true) {
+//   filterDiv =
+//   <div className="callout cell shrink small-10">
+//     <div>
+//       How much are you willing to spend? &nbsp;
+//       <input type="range" min="0" max="25" step="5" name="max_price" value={this.state.max_price} onChange={this.handleInputChange} />
+//       &nbsp; ${this.state.max_price}
+//     </div>
+//     <div>
+//       How far out do you want to look? &nbsp;
+//       <input type="range" min="0" max="21" step="1" name="days_out" value={this.state.days_out} onChange={this.handleInputChange} />
+//       &nbsp; {this.state.days_out} days out, shows up until {moment(daysOutDate).format('dddd MMMM Do')}
+//     </div>
+//     <div>
+//       # of shows that meet your criteria: <b>{events_filtered.length}</b>
+//     </div>
+//   </div>
+// }
