@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import moment from 'moment';
 import EventIndexTile from "../components/EventIndexTile";
 import MapClass from "../components/MapClass";
 import MyMapComponent from "../components/MyMapComponent";
@@ -14,12 +15,12 @@ class EventsIndexContainer extends Component {
       map_button_text: "Hide Map",
       filter_status: true,
       filter_button_text: "Hide Filters",
-      max_price: 5,
+      max_price: 25,
       max_cost: 100,
-      days_out: 21
+      days_out: 0
     };
     this.toggleMap = this.toggleMap.bind(this)
-    this.showFilters = this.showFilters.bind(this)
+    this.toggleFilters = this.toggleFilters.bind(this)
     this.handleInputChange = this.handleInputChange.bind(this);
     this.stringifyDate = this.stringifyDate.bind(this);
   }
@@ -31,7 +32,7 @@ class EventsIndexContainer extends Component {
     this.setState({ [name]: value });
   }
 
-  showFilters() {
+  toggleFilters() {
     if (this.state.filter_status == true) {
       this.setState({
         filter_status: false,
@@ -100,15 +101,19 @@ class EventsIndexContainer extends Component {
   }
 
   render() {
+    let today = moment().format()
+    let daysOutDate = moment().add(this.state.days_out, 'day').format()
+
     let events_filtered = []
     let events = this.state.events.map(event => {
-      if (event.cost <= this.state.max_price) {
+      if (event.cost <= this.state.max_price && event.start_date_time <= daysOutDate) {
         events_filtered.push(event)
         return (
           <EventIndexTile key={event.id} id={event.id} event={event} />
         );
       }
     });
+    console.log(events_filtered)
 
     let map;
     if (this.state.map_status == true) {
@@ -117,13 +122,7 @@ class EventsIndexContainer extends Component {
         />
     }
 
-    let today = new Date();
-    let daysOutDate = today + this.state.days_out
     let filterDiv;
-
-    let moment = require('moment');
-    console.log(moment().format());
-
     if (this.state.filter_status == true) {
       filterDiv =
       <div className="callout cell shrink small-10">
@@ -135,7 +134,10 @@ class EventsIndexContainer extends Component {
         <div>
           How far out do you want to look? &nbsp;
           <input type="range" min="0" max="21" step="1" name="days_out" value={this.state.days_out} onChange={this.handleInputChange} />
-          &nbsp; {this.state.days_out} days out ({daysOutDate})
+          &nbsp; {this.state.days_out} days out, shows up until {moment(daysOutDate).format('dddd MMMM Do')}
+        </div>
+        <div>
+          # of shows that meet your criteria: <b>{events_filtered.length}</b>
         </div>
       </div>
     }
@@ -146,7 +148,7 @@ class EventsIndexContainer extends Component {
           <div className="cell small-12 home-button-row">
             <Link to={`/events/new`}><button className="button radius spacer">Submit a New Show</button></Link>
             <button className="button radius spacer" onClick={this.toggleMap}>{this.state.map_button_text}</button>
-            <button className="button radius spacer" onClick={this.showFilters}>{this.state.filter_button_text}</button>
+            <button className="button radius spacer" onClick={this.toggleFilters}>{this.state.filter_button_text}</button>
             {filterDiv}
           </div>
         </div>
