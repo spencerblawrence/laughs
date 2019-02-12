@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :signups
   has_many :events, through: :signups
 
+  has_many :comedians
+
   def username
    return self.email.split('@')[0]
   end

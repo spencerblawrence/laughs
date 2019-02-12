@@ -117,3 +117,23 @@ Event.create!(
   lat: 42.347350,
   lng: -71.094950
 )
+
+users = [
+  [ "Spencer", "Lawrence", "spencer@gmail.com", "Fan", "password", "password", true, "https://s3.amazonaws.com/laughs-development/user_profile_pics/cg_in_space_square.jpg" ],
+  [ "Kevin", "Hart", "kevin@gmail.com", "Comedian", "password", "password", false, "https://s3.amazonaws.com/laughs-development/comedians/kevin_hart.jpg" ],
+  [ "Kumail", "Nanjiani", "kumail@gmail.com", "Comedian", "password", "password", false,  "https://s3.amazonaws.com/laughs-development/comedians/kumail_nanjiani.jpg" ],
+  [ "Mike", "Birbiglia", "mike@gmail.com", "Comedian", "password", "password", false,  "https://s3.amazonaws.com/laughs-development/comedians/mike_birbiglia.jpg" ],
+  [ "Patton", "Oswalt", "patton@gmail.com", "Comedian", "password", "password", false,  "https://s3.amazonaws.com/laughs-development/comedians/patton_oswalt.jpg" ],
+  [ "John", "Mulaney", "john@gmail.com", "Comedian", "password", "password", false,  "https://s3.amazonaws.com/laughs-development/comedians/john_mulaney.jpg" ]
+]
+
+users.each do |first_name, last_name, email, role, password, password_confirmation, admin_status, profile_photo|
+  User.create(
+    first_name: first_name,
+    last_name: last_name,
+    email: email,
+    password: password,
+    password_confirmation: password_confirmation,
+    admin: admin_status,
+    profile_photo: profile_photo )
+end
