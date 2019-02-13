@@ -1,58 +1,62 @@
 <div class="grid-container">
-  <div class="grid-x grid-margin-x grid-margin-y">
+  <div class="grid-x">
     <div class="cell">
+      <br />
+      <br />
 
-        <div class="font-slab text1 weight7">Sign Up</div>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "callout form center", id: "signup-form" }) do |f| %>
+      <%= devise_error_messages! %>
 
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "callout form", id: "signup-form" }) do |f| %>
-        <%= devise_error_messages! %>
+      <div class="font-slab text1 weight7">Sign Up</div>
 
-        <div>
-          <%= f.label :first_name, "First Name", class: "weight3 text4" %>
-          <%= f.text_field :first_name, autofocus: true, autocomplete: "email", class: "rails-field" %>
-        </div>
+      <div>
+        <%= f.label :first_name, "First Name", class: "weight3 text4" %>
+        <%= f.text_field :first_name, autofocus: true, autocomplete: "email", class: "rails-field" %>
+      </div>
 
-        <div>
-          <%= f.label :last_name, "Last Name", class: "weight3 text4" %>
-          <%= f.text_field :last_name, autofocus: true, autocomplete: "email", class: "rails-field" %>
-        </div>
+      <div>
+        <%= f.label :last_name, "Last Name", class: "weight3 text4" %>
+        <%= f.text_field :last_name, autofocus: true, autocomplete: "email", class: "rails-field" %>
+      </div>
 
-        <div>
-          <%= f.label :email, class: "weight3 text4" %>
-          <%= f.email_field :email, class: "rails-field" %>
-        </div>
+      <div>
+        <%= f.label :email, class: "weight3 text4" %>
+        <%= f.email_field :email, class: "rails-field" %>
+      </div>
 
-        <div>
-          <%= f.label :address, class: "weight3 text4" %>
-          <%= f.text_field :address, class: "rails-field" %>
-        </div>
+      <div>
+        <%= f.label :address, class: "weight3 text4" %>
+        <%= f.text_field :address, class: "rails-field" %>
+      </div>
 
-        <div>
-          <%= f.label :role, "What best describes you?", class: "weight3 text4" %>
-          <%= f.select :role, [['Fan', 1], ['Comedian', 2], ['Venue Owner / Show Organizer', 3]], class: "rails-field" %>
-        </div>
+      <div>
+        <%= f.label :role, "What best describes you?", class: "weight3 text4" %>
+        <!--  the first value is displayed to user, second is passed to database -->
+        <%= f.select :role, [['Fan', 'fan'], ['Comedian', 'comedian'], ['Venue Owner / Show Organizer', 'owner']], class: "rails-field" %>
+      </div>
 
-        <div>
-          <%= f.label :password, class: "weight3 text4" %>
-          <% if @minimum_password_length %>
-            <% @min_pw_length_string = "#{@minimum_password_length} characters minimum" %>
-          <% end %>
-          <%= f.password_field :password, autocomplete: "new-password", class: "rails-field", placeholder: @min_pw_length_string %>
-        </div>
-
-        <div>
-          <%= f.label :password_confirmation, class: "weight3 text4" %>
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "rails-field" %>
-        </div>
-
-        <div>
-          <%= f.submit "Sign Up", class: "button expand radius" %>
-        </div>
-
-        <div>
-          <%= render "devise/shared/links" %>
-        </div>
+      <div>
+        <%= f.label :password, class: "weight3 text4" %>
+        <% if @minimum_password_length %>
+          <% @min_pw_length_string = "#{@minimum_password_length} characters minimum" %>
         <% end %>
+        <%= f.password_field :password, autocomplete: "new-password", class: "rails-field", placeholder: @min_pw_length_string %>
+      </div>
+
+      <div>
+        <%= f.label :password_confirmation, class: "weight3 text4" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "rails-field" %>
+      </div>
+
+      <div>
+        <%= f.submit "Sign Up", class: "button expand radius" %>
+      </div>
+
+      <div>
+        <%= render "devise/shared/links" %>
+      </div>
+
+      <% end %>
 
     </div>
   </div>

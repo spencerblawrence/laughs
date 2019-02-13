@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_12_163931) do
+ActiveRecord::Schema.define(version: 2019_02_12_210948) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comedian_profiles", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "city_state"
+    t.string "website"
+    t.string "photo1", null: false
+    t.text "description1", null: false
+    t.text "description2"
+    t.text "description3"
+    t.string "video1"
+    t.string "video2"
+    t.string "video3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_comedian_profiles_on_user_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "name", null: false

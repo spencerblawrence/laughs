@@ -23,20 +23,31 @@
   margin-top: 30px;
 }
 
+.comedian-index-container {
+  margin: auto;
+}
+
+.comedian-index-tile {
+  border-radius: 6px;
+  background-color: white;
+}
+
+.comedian-index-prof-pic {
+  max-width: 300px;
+  border-top: 6px;
+}
+
 // FORMS
 
 .form {
-  width: 40%;
+  width: 60%;
   border-radius: 6px;
+  margin-top: 50px;
 }
 
 .form-rails {
   max-width: 400px;
   margin: auto;
-}
-
-.new-show-form {
-  margin-top: 300px;
 }
 
 .rails-field {
@@ -64,5 +75,10 @@
 }
 
 .center-div {
+  margin: auto;
+}
+
+.center {
+  justify-content: center;
   margin: auto;
 }

@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 
   resources :events
   resources :users
-  resources :comedians, only: [:index, :show]
+  resources :comedians, only: [:index, :show, :new]
+  resources :comedian_profiles
 
   namespace :api do
     namespace :v1 do

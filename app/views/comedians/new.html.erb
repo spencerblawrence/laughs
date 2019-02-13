@@ -1,0 +1,45 @@
+<!--  add authentication + error messages -->
+
+<div class="font-slab text1 weight7">Create Your Comedian Profile</div>
+
+<%= form_for(@comedian_profile, html: { class: "callout form", id: "signup-form" }) do |f| %>
+
+<div>
+  <%= f.label :first_name, "First Name", class: "weight3 text4" %>
+  <%= f.text_field :first_name, class: "rails-field" %>
+</div>
+
+<div>
+  <%= f.label :last_name, "Last Name", class: "weight3 text4" %>
+  <%= f.text_field :last_name, class: "rails-field" %>
+</div>
+
+<div>
+  <%= f.label :city_state, "Homebase (City, State)", class: "weight3 text4" %>
+  <%= f.text_field :city_state, class: "rails-field" %>
+</div>
+
+<div>
+  <%= f.label :website, "Website", class: "weight3 text4" %>
+  <%= f.text_field :website, class: "rails-field" %>
+</div>
+
+<div>
+  <%= f.label :photo1, "Photo / Headshot (Image URL)", class: "weight3 text4" %>
+  <%= f.text_field :photo1, class: "rails-field" %>
+</div>
+
+<div>
+  <%= f.label :description1, "Description", class: "weight3 text4" %>
+  <%= f.text_area :description1, class: "rails-field" %>
+</div>
+
+<div>
+  <%= f.label :video1, "YouTube Video (if you have one)", class: "weight3 text4" %>
+  <%= f.text_field :video1, class: "rails-field" %>
+</div>
+
+<div>
+  <%= f.submit "Create", class: "button expand radius" %>
+</div>
+<% end %>

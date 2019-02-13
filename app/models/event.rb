@@ -11,8 +11,6 @@ class Event < ApplicationRecord
   has_many :signups
   has_many :users, through: :signups
 
-
-
   attr_reader :started_at_date, :started_at_time
 
   # this is a getter

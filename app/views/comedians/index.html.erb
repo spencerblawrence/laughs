@@ -1,2 +1,15 @@
-<p>Hello from Comedians Index Page</p>
-<%= @users %>
+<div class="grid-container">
+  <div class="grid-x comedian-index-container">
+
+    <% @comedians.each do |comedian| %>
+      <a href="comedians/<%= comedian.user_id %>">
+        <div class="cell small-4 callout comedian-index-tile">
+          <b><%= comedian.full_name %></b>
+          <br />
+          <img src=<%=comedian.photo1%> class="comedian-index-prof-pic">
+        </div>
+      </a>
+    <% end %>
+
+  </div>
+</div>
