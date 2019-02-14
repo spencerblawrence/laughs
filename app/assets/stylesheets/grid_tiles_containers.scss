@@ -23,10 +23,6 @@
   margin-top: 30px;
 }
 
-.comedian-index-container {
-  margin: auto;
-}
-
 .comedian-index-tile {
   border-radius: 6px;
   background-color: white;
@@ -81,4 +77,16 @@
 .center {
   justify-content: center;
   margin: auto;
+}
+
+.pad-left {
+  padding-left: 20px;
+}
+
+.round-borders {
+  border-radius: 6px;
+}
+
+.small-margin-bottom {
+  margin-bottom: 5px;
 }

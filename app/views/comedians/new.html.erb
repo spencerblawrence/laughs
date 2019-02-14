@@ -1,8 +1,11 @@
 <!--  add authentication + error messages -->
 
-<div class="font-slab text1 weight7">Create Your Comedian Profile</div>
+<br />
+<br />
 
-<%= form_for(@comedian_profile, html: { class: "callout form", id: "signup-form" }) do |f| %>
+<%= form_for(@comedian_profile, html: { class: "callout form center", id: "signup-form" }) do |f| %>
+
+<div class="font-slab text1 weight7">Create Your Comedian Profile</div>
 
 <div>
   <%= f.label :first_name, "First Name", class: "weight3 text4" %>

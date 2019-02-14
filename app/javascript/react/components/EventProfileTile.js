@@ -9,11 +9,11 @@ const EventIndexTile = props => {
   }
 
   return (
-    <div className="grid-x callout cell small-6 event-index-tile">
-      <div className="cell small-5">
+    <div className="grid-x callout cell small-12 event-index-tile">
+      <div className="cell small-3">
         <img className="event-index-tile-image" src={props.event.image_url} />
       </div>
-      <div className="cell small-7 pad-left">
+      <div className="cell small-9 event-index-tile-text">
         <div className="font-slab text4 weight7 small-margin-bottom">{props.event.name}</div>
         <p>{props.event.venue}</p>
         <p>{props.event.address}</p>

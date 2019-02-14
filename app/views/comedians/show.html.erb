@@ -1,1 +1,26 @@
-<p>Hello from comedian show page</p>
+<br />
+<br />
+<div class="grid-container callout center round-borders">
+  <div class="grid-x">
+    <div class="cell small-12 font-slab weight7 text2">
+      <%= @comedian_profile.full_name %>
+    </div>
+    <br />
+  </div>
+  <div class="grid-x">
+    <div class="cell small-4 ">
+      <img src=<%= @comedian_profile.photo1 %> class="round-borders" />
+    </div>
+    <div class="cell small-8 pad-left">
+      <p><%= @comedian_profile.description1 %></p>
+      <hr>
+      <a href="<%= @comedian_profile.website %>"><%= @comedian_profile.website %></a>
+      <p>Based out of <%= @comedian_profile.city_state %></p>
+    </div>
+  </div>
+  <br/>
+  <div class="grid-x">
+    <div class="font-slab weight4 text3">Upcoming Shows:</div>
+  </div>
+</div>
+</div>

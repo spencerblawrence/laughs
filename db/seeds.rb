@@ -28,27 +28,27 @@ Event.create!(
   lng: -71.107470
 )
 
-Event.create!(
-  name: "McGreevy's FREE COMEDY: Every Monday & Tuesday",
-  venue: "McGreevy's Boston",
-  address: "911 Boylston St., Boston, MA, 02115",
-  start_date_time: "2019-02-11 20:00:00 -0500",
-  end_date_time: "2019-02-11 21:30:00 -0500",
-  cost: 0,
-  website: "",
-  description: "",
-  recurring: true,
-  image_url: "https://s3.amazonaws.com/laughs-development/events/mcgreevys.jpg",
-  lat: 42.348430,
-  lng: -71.084400
-)
+# Event.create!(
+#   name: "McGreevy's FREE COMEDY: Every Monday & Tuesday",
+#   venue: "McGreevy's Boston",
+#   address: "911 Boylston St., Boston, MA, 02115",
+#   start_date_time: "2019-02-18 20:00:00 -0500",
+#   end_date_time: "2019-02-18 21:30:00 -0500",
+#   cost: 0,
+#   website: "",
+#   description: "",
+#   recurring: true,
+#   image_url: "https://s3.amazonaws.com/laughs-development/events/mcgreevys.jpg",
+#   lat: 42.348430,
+#   lng: -71.084400
+# )
 
 Event.create!(
-  name: "McGreevy's FREE COMEDY: Every Monday & Tuesday",
+  name: "McGreevy's FREE COMEDY",
   venue: "McGreevy's Boston",
   address: "911 Boylston St., Boston, MA, 02115",
-  start_date_time: "2019-02-12 20:00:00 -0500",
-  end_date_time: "2019-02-12 21:30:00 -0500",
+  start_date_time: "2019-02-19 20:00:00 -0500",
+  end_date_time: "2019-02-19 21:30:00 -0500",
   cost: 0,
   website: "",
   description: "",
@@ -77,8 +77,8 @@ Event.create!(
   name: "Comedy at Bill's Bar (Free! Wednesday, 7:30PM)",
   venue: "Bill's Bar",
   address: "5 Lansdowne Street, Boston, MA, 02215",
-  start_date_time: "2019-02-13 20:00:00 -0500",
-  end_date_time: "2019-02-13 21:30:00 -0500",
+  start_date_time: "2019-02-20 20:00:00 -0500",
+  end_date_time: "2019-02-20 21:30:00 -0500",
   cost: 10,
   website: "https://billsbarcomedy.eventbrite.com/?aff=BillsBostonCalendar",
   description: "",
@@ -88,20 +88,20 @@ Event.create!(
   lng: -71.094950
 )
 
-Event.create!(
-  name: "Comedy at Bill's Bar ($10 Friday, 8PM)",
-  venue: "Bill's Bar",
-  address: "5 Lansdowne Street, Boston, MA, 02215",
-  start_date_time: "2019-02-15 20:00:00 -0500",
-  end_date_time: "2019-02-15 21:30:00 -0500",
-  cost: 10,
-  website: "https://billsbarcomedy.eventbrite.com/?aff=BillsBostonCalendar",
-  description: "",
-  recurring: true,
-  image_url: "https://s3.amazonaws.com/laughs-development/events/bills_bar.jpg",
-  lat: 42.347350,
-  lng: -71.094950
-)
+# Event.create!(
+#   name: "Comedy at Bill's Bar ($10 Friday, 8PM)",
+#   venue: "Bill's Bar",
+#   address: "5 Lansdowne Street, Boston, MA, 02215",
+#   start_date_time: "2019-02-15 20:00:00 -0500",
+#   end_date_time: "2019-02-15 21:30:00 -0500",
+#   cost: 10,
+#   website: "https://billsbarcomedy.eventbrite.com/?aff=BillsBostonCalendar",
+#   description: "",
+#   recurring: true,
+#   image_url: "https://s3.amazonaws.com/laughs-development/events/bills_bar.jpg",
+#   lat: 42.347350,
+#   lng: -71.094950
+# )
 
 Event.create!(
   name: "Comedy at Bill's Bar ($10 Saturday, 8PM)",
@@ -184,5 +184,3 @@ comedian_profiles.each do |user_id, first_name, last_name, city_state, website, 
     description1: description1
   )
 end
-
-  # [ "John", "Mulaney", "john@gmail.com", "comedian", "password", "password", false,  "https://s3.amazonaws.com/laughs-development/comedians/john_mulaney.jpg" ]
