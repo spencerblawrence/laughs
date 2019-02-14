@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Marker, InfoWindow } from 'react-google-maps';
+import { Link } from "react-router";
 
 class MapMarkers extends Component {
   constructor(props) {
@@ -33,13 +34,14 @@ class MapMarkers extends Component {
           info={event}
         >
         {this.state.openMarker == event.id && <InfoWindow>
-          <div>
+          <div className="text5">
             <p><b>{event.name}</b></p>
             <p>{event.venue}</p>
             <p>{event.address}</p>
             <p>{event.start_at_date}</p>
             <p>{event.started_at_time}</p>
             <p>${event.cost}</p>
+            <Link to={`/events/${event.id}`}><p>Learn More & RSVP</p></Link>
           </div>
         </InfoWindow>}
         </Marker>

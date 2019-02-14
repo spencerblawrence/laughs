@@ -115,10 +115,11 @@ class NewShowContainer extends Component {
 
       return (
         <div className="grid-container">
-          <div className="grid-x grid-margin-x grid-margin-y">
-            <div className="cell small-12"></div>
-            <div className="form callout cell small-12">
-              <h1 className="text1">Create a Show</h1>
+          <div className="grid-x">
+            <div className="cell"></div>
+            <br></br>
+            <div className="form callout center">
+              <h1 className="text1 weight7">Create a Show</h1>
               {errorDiv}
               <form onSubmit={this.handleSubmit}>
                 <InputField

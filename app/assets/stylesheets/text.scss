@@ -38,6 +38,10 @@
   font-size: 1.1rem;
 }
 
+.text6 {
+  font-size: 0.8rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -50,12 +54,6 @@
   text-align: left;
 }
 
-// aligns items within it
-.align-center {
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    margin: auto;
-    text-align: center;
+.map-markers-text {
+
 }

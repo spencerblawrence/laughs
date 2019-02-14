@@ -69,23 +69,35 @@ class EventShowContainer extends Component {
     }
     return (
       <div className="grid-container">
-        <div className="grid-x grid-margin-x grid-margin-y">
-          <div className="cell small-12"></div>
+        <div className="grid-x">
           <div className="cell small-12 callout event-show-tile">
             <div className="grid-x">
-            <div className="cell small-3">
-              <img className="event-index-tile-image" src={this.state.event.image_url} />
+              <div className="cell small-3">
+                <img className="event-index-tile-image" src={this.state.event.image_url} />
+              </div>
+              <div className="cell small-9 pad-left">
+                <div className="font-slab text3 weight7 small-margin-bottom">{this.state.event.name}</div>
+                <p>{this.state.event.venue}</p>
+                <p>{this.state.event.address}</p>
+                <p>{this.state.event.started_at_date}</p>
+                <p>{this.state.event.started_at_time}</p>
+                <p>${this.state.event.cost}</p>
+                <p>{cost}</p>
+                <div className="button radius" onClick={this.signupClick}>{this.state.signup_button_text}</div>
+              </div>
             </div>
-            <div className="cell small-9 event-index-tile-text">
-              <div className="font-slab text3 weight7">{this.state.event.name}</div>
-              <p>{this.state.event.venue}</p>
-              <p>{this.state.event.address}</p>
-              <p>{this.state.event.started_at_date}</p>
-              <p>{this.state.event.started_at_time}</p>
-              <p>${this.state.event.cost}</p>
-              <p>{cost}</p>
-              <div className="button radius" onClick={this.signupClick}>{this.state.signup_button_text}</div>
-            </div>
+            <div className="grid-x">
+              <div className="cell small-3">
+              </div>
+              <div className="cell small-9 pad-left">
+                <div className="font-slab text3 weight4 small-margin-bottom">The Lineup:</div>
+                <ul>
+                  <li>Kumail Nanjiani</li>
+                  <li>Kevin Hart</li>
+                  <li>Mike Burbiglia</li>
+                  <li>Suprise Guests!</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

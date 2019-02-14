@@ -5,7 +5,7 @@ class UserProfileContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
+      user: [],
       events: []
     };
   }
@@ -24,7 +24,7 @@ class UserProfileContainer extends Component {
     .then(response => response.json())
     .then(userData => {
       this.setState({
-        email: userData.user.email,
+        user: userData.user,
         events: userData.user.events
       });
     })
@@ -43,10 +43,9 @@ class UserProfileContainer extends Component {
         <div className="grid-x grid-margin-x grid-margin-y">
           <div className="cell small-12">
             <div className="profile-show-container">
-              <div className="font-slab text1 weight7">User Profile</div>
-              <div className="text6 weight3">{this.state.email}</div>
+              <div className="font-slab text1 weight7">Hi, {this.state.user.full_name}!</div>
               <br />
-              <div className="font-slab text1 weight7">Here are your upcoming shows:</div>
+              <div className="font-slab text2 weight4">Here are the upcoming shows you've RSVP'd for:</div>
               {events}
             </div>
           </div>

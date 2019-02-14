@@ -14,9 +14,9 @@ class EventsIndexContainer extends Component {
       map_button_text: "Hide Map",
       filter_status: true,
       filter_button_text: "Hide Filters",
-      max_price: 25,
+      max_price: 10,
       max_cost: 100,
-      days_out: 0
+      days_out: 7
     };
     this.toggleMap = this.toggleMap.bind(this)
     this.toggleFilters = this.toggleFilters.bind(this)

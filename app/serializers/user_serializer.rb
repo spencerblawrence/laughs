@@ -1,3 +1,8 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :username, :email, :events, :signups
+  attributes :id, :email, :events, :signups, :full_name
+
+  # def started_at_date
+  #   binding.pry
+  #   object.events
+  # end
 end

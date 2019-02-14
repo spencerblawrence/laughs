@@ -3,10 +3,15 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
+  validates :role, presence: true, inclusion: { in: %w(fan comedian owner) }
+
   has_many :signups
   has_many :events, through: :signups
 
-  def username
-   return self.email.split('@')[0]
+  # belongs_to :comedian_profile
+
+  def full_name
+    full_name = "#{self.first_name} #{self.last_name}"
+    return full_name
   end
 end

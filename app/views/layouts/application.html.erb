@@ -15,16 +15,20 @@
   <body>
 
     <nav class="top-bar">
-      <div id="logo-header"><a href="/">Laughs</a></div>
-      <section class="top-bar-section">
+      <div class="top-bar-left">
+        <div id="logo-header"><a href="/">Laughs</a></div>
+      </div>
+
       <div class="top-bar-right">
         <ul class="menu">
+          <li id="top-bar-button-outline" class="center-content"><b><%= link_to 'Shows', events_path %></b></li>
+          <li id="top-bar-button-outline" class="center-content"><b><%= link_to 'Comedians', comedians_path %></b></li>
           <%- if current_user -%>
-            <li id="top-bar-button-outline" class="center-content"><%= link_to 'My Profile', user_path(current_user.id) %></li>
-            <li id="top-bar-button-outline" class="center-content"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+            <li id="top-bar-button-outline" class="center-content"><b><%= link_to 'My Profile', user_path(current_user.id) %></b></li>
+            <li id="top-bar-button-outline" class="center-content"><b><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></b></li>
           <%- else -%>
-            <li id="top-bar-button-outline" class="center-content"><%= link_to 'Sign Up', new_user_registration_path %></li>
-            <li id="top-bar-button-outline" class="center-content"><%= link_to 'Sign In', new_user_session_path %></li>
+            <li id="top-bar-button-outline" class="center-content"><b><%= link_to 'Sign Up', new_user_registration_path %></b></li>
+            <li id="top-bar-button-outline" class="center-content"><b><%= link_to 'Sign In', new_user_session_path %></b></li>
           <%- end -%>
         </ul>
       </div>
