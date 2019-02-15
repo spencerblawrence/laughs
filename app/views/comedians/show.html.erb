@@ -1,5 +1,10 @@
+<div id="app">
+</div>
+
+<!--
 <br />
 <br />
+
 <div class="grid-container callout center round-borders">
   <div class="grid-x">
     <div class="cell small-12 font-slab weight7 text2">
@@ -16,11 +21,22 @@
       <hr>
       <a href="<%= @comedian_profile.website %>"><%= @comedian_profile.website %></a>
       <p>Based out of <%= @comedian_profile.city_state %></p>
+      <hr>
+      <div class="font-slab weight7 text4">Upcoming Shows</div>
+      <% @comedian.events.each do |event| %>
+        <div class="grid-x callout">
+          <div class="cell small-4 ">
+            <img src=<%= event.image_url %> class="round-borders" />
+          </div>
+          <div class="cell small-8 pad-left">
+            <p><b><%= event.name %></b></p>
+            <p><%= event.venue %></p>
+            <p><%= event.started_at_date %></p>
+            <p><%= event.started_at_time %></p>
+            <%= link_to 'Learn More & RSVP', event_path(event.id) %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
-  <br/>
-  <div class="grid-x">
-    <div class="font-slab weight4 text3">Upcoming Shows:</div>
-  </div>
-</div>
-</div>
+</div> -->

@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
+import ComedianShowTile from "../components/ComedianShowTile";
 
 class EventShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       event: {},
+      comedians: [],
       signup_status: false,
       signup_button_text: "RSVP!"
     };
@@ -25,7 +27,10 @@ class EventShowContainer extends Component {
     })
     .then(response => response.json())
     .then(event => {
-      this.setState({ event: event["event"] });
+      this.setState({
+        event: event.event,
+        comedians: event.event.comedians
+      });
     })
     .catch(error => console.log(`Error in fetch: ${error.message}`));
   }
@@ -63,47 +68,52 @@ class EventShowContainer extends Component {
   }
 
   render() {
-    let cost
-    if (this.state.event.cost == 0) {
-      cost = "FREE!"
+    let comedians;
+    comedians = this.state.comedians.map(comedian => {
+      return (
+        <ComedianShowTile
+          key={comedian.id}
+          id={comedian.id}
+          name={comedian.full_name}
+          photo={comedian.profile_photo}
+          />
+      );
     }
-    return (
-      <div className="grid-container">
-        <div className="grid-x">
-          <div className="cell small-12 callout event-show-tile">
-            <div className="grid-x">
-              <div className="cell small-3">
-                <img className="event-index-tile-image" src={this.state.event.image_url} />
-              </div>
-              <div className="cell small-9 pad-left">
-                <div className="font-slab text3 weight7 small-margin-bottom">{this.state.event.name}</div>
-                <p>{this.state.event.venue}</p>
-                <p>{this.state.event.address}</p>
-                <p>{this.state.event.started_at_date}</p>
-                <p>{this.state.event.started_at_time}</p>
-                <p>${this.state.event.cost}</p>
-                <p>{cost}</p>
-                <div className="button radius" onClick={this.signupClick}>{this.state.signup_button_text}</div>
-              </div>
-            </div>
-            <div className="grid-x">
-              <div className="cell small-3">
-              </div>
-              <div className="cell small-9 pad-left">
-                <div className="font-slab text3 weight4 small-margin-bottom">The Lineup:</div>
-                <ul>
-                  <li>Kumail Nanjiani</li>
-                  <li>Kevin Hart</li>
-                  <li>Mike Burbiglia</li>
-                  <li>Suprise Guests!</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+  );
+
+  let cost;
+  if (this.state.event.cost == 0) {
+    cost = "FREE!"
+  }
+
+  return (
+    <div className="grid-container">
+      <div className="grid-x callout event-show-tile">
+        <div className="cell small-3">
+          <img className="event-index-tile-image" src={this.state.event.image_url} />
+        </div>
+        <div className="cell small-9 pad-left">
+          <div className="font-slab text3 weight7 small-margin-bottom">{this.state.event.name}</div>
+          <p>{this.state.event.venue}</p>
+          <p>{this.state.event.address}</p>
+          <p>{this.state.event.started_at_date}</p>
+          <p>{this.state.event.started_at_time}</p>
+          <p>${this.state.event.cost}</p>
+          <p>{cost}</p>
+          <div className="button radius" onClick={this.signupClick}>{this.state.signup_button_text}</div>
         </div>
       </div>
-    );
-  }
+      <div className="grid-x callout">
+        <div className="cell small-12">
+          <div className="font-slab text3 weight4 center-text">The Lineup</div>
+        </div>
+      </div>
+      <div className="grid-x callout">
+        {comedians}
+      </div>
+    </div>
+  );
+}
 }
 
 export default EventShowContainer;
