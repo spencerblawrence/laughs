@@ -1,6 +1,5 @@
 class ComediansController < ApplicationController
   def index
-    # @comedians = User.where(role: "comedian")
     @comedians = ComedianProfile.all
   end
 

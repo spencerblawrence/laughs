@@ -11,7 +11,8 @@ class Event < ApplicationRecord
   has_many :signups
   has_many :users, through: :signups
 
-  attr_reader :started_at_date, :started_at_time
+  has_many :lineup_slots, foreign_key: "gig_id"
+  has_many :comedians, through: :lineup_slots
 
   # this is a getter
   def started_at_date

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       resources :events, only: [:index, :show, :create]
       resources :signups, only: :create
       resources :users
+      resources :comedian_profiles
     end
   end
 end

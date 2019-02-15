@@ -33,6 +33,21 @@
   border-top: 6px;
 }
 
+.comedian-show-tile-pic {
+  display: flex;
+  object-fit: scale-down;
+  max-width: 320px;
+  max-height: 300px;
+  margin: auto;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.comedian-show-tile-box {
+  // display: flex;
+  // justify-content: space-around;
+}
+
 // FORMS
 
 .form {
@@ -60,18 +75,22 @@
 // UTILITIES
 
 .center-content {
-    display: flex;
-    vertical-align: middle;
-    text-align: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100%;
-    width: 60vw;
-    margin: auto;
+  display: flex;
+  vertical-align: middle;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 60vw;
+  margin: auto;
 }
 
 .center-div {
   margin: auto;
+}
+
+.center-text {
+  text-align: center;
 }
 
 .center {
@@ -89,4 +108,12 @@
 
 .small-margin-bottom {
   margin-bottom: 5px;
+}
+
+.row-spacer {
+  margin-top: 40px;
+}
+
+.margin-top {
+  margin-top: 40px;
 }
