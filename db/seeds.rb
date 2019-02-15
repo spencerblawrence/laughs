@@ -120,10 +120,10 @@ Event.create!(
 
 users = [
   [ "Spencer", "Lawrence", "spencer@gmail.com", "fan", "password", "password", true, "https://s3.amazonaws.com/laughs-development/user_profile_pics/cg_in_space_square.jpg" ],
-  [ "Kevin", "Hart", "kevin@gmail.com", "comedian", "password", "password", false, "https://s3.amazonaws.com/laughs-development/comedians/kevin_hart.jpg" ],
-  [ "Kumail", "Nanjiani", "kumail@gmail.com", "comedian", "password", "password", false,  "https://s3.amazonaws.com/laughs-development/comedians/kumail_nanjiani.jpg" ],
-  [ "Mike", "Birbiglia", "mike@gmail.com", "comedian", "password", "password", false,  "https://s3.amazonaws.com/laughs-development/comedians/mike_birbiglia.jpg" ],
-  [ "Patton", "Oswalt", "patton@gmail.com", "comedian", "password", "password", false,  "https://s3.amazonaws.com/laughs-development/comedians/patton_oswalt.jpg" ]
+  [ "Kevin", "Hart", "kevin@gmail.com", "comedian", "password", "password", false, "https://s3.amazonaws.com/laughs-development/comedians/kevin_hart_500x281.jpg" ],
+  [ "Kumail", "Nanjiani", "kumail@gmail.com", "comedian", "password", "password", false,  "https://s3.amazonaws.com/laughs-development/comedians/kumail_nanjiani_500x281.jpg" ],
+  [ "Mike", "Birbiglia", "mike@gmail.com", "comedian", "password", "password", false,  "https://s3.amazonaws.com/laughs-development/comedians/mike_birbiglia_500x281.jpg" ],
+  [ "Patton", "Oswalt", "patton@gmail.com", "comedian", "password", "password", false,  "https://s3.amazonaws.com/laughs-development/comedians/patton_oswalt_500x281.jpg" ]
 ]
 
 users.each do |first_name, last_name, email, role, password, password_confirmation, admin_status, profile_photo|
@@ -144,7 +144,7 @@ comedian_profiles = [
     "Hart",
     "New York City, NY",
     "http://kevinhartnation.com/about/",
-    "https://s3.amazonaws.com/laughs-development/comedians/kevin_hart.jpg",
+    "https://s3.amazonaws.com/laughs-development/comedians/kevin_hart_500x281.jpg",
     "Kevin Hart exploded onto the scene as one of the most versatile comedic actors in both television and film; and he’s making history."
   ],
   [ 3,
@@ -152,7 +152,7 @@ comedian_profiles = [
     "Nanjiani",
     "Los Angeles, CA",
     "https://en.wikipedia.org/wiki/Kumail_Nanjiani",
-    "https://s3.amazonaws.com/laughs-development/comedians/kumail_nanjiani.jpg",
+    "https://s3.amazonaws.com/laughs-development/comedians/kumail_nanjiani_500x281.jpg",
     "Kumail Nanjiani is a Pakistani-American stand-up comedian, actor, podcast host, and writer best known for being a main cast member on HBO's Emmy Award-nominated series Silicon Valley, as well as for providing the voice of Prismo on the Emmy Award-winning animated series Adventure Time. He starred on the TNT series Franklin & Bash and the Adult Swim series Newsreaders. Nanjiani also co-hosted the Comedy Central show The Meltdown with Jonah and Kumail."
   ],
   [ 4,
@@ -160,7 +160,7 @@ comedian_profiles = [
     "Birbiglia",
     "Shrewsbury, MA",
     "http://birbigs.com/",
-    "https://s3.amazonaws.com/laughs-development/comedians/mike_birbiglia.jpg",
+    "https://s3.amazonaws.com/laughs-development/comedians/mike_birbiglia_500x281.jpg",
     "Mike Birbiglia is an American comedian, actor, and filmmaker. He is a frequent contributor to This American Life and The Moth, and has released several comedy albums and television specials. His feature-length directorial debut Sleepwalk with Me (2012), based on his one-man show of the same name and in which he also starred, won awards at the Sundance and Nantucket film festivals. He also wrote, directed, and starred in the comedy-drama Don't Think Twice (2016). His 2010 book Sleepwalk with Me and Other Painfully True Stories was a New York Times bestseller and a finalist for the 2011 Thurber Prize for American Humor. Birbiglia has appeared in films such as Your Sister's Sister (2011), Cedar Rapids (2011), and Trainwreck (2015), played a recurring role in Orange Is the New Black, and has guest starred in episodes of Girls, Inside Amy Schumer, and Broad City."
   ],
   [ 5,
@@ -168,7 +168,7 @@ comedian_profiles = [
     "Oswalt",
     "Los Angeles, CA",
     "http://www.pattonoswalt.com/",
-    "https://s3.amazonaws.com/laughs-development/comedians/patton_oswalt.jpg",
+    "https://s3.amazonaws.com/laughs-development/comedians/patton_oswalt_500x281.jpg",
     "Patton Oswalt is an American stand-up comedian, actor, voice actor and writer, known for playing Spencer Olchin in the sitcom The King of Queens (1998–2007), voicing Remy in the Pixar film Ratatouille (2007), co-starring with Charlize Theron in Young Adult (2011) and guest starring as the Koenigs on Agents of S.H.I.E.L.D. (2014–2017). He has appeared in six stand-up specials and won a Primetime Emmy Award for Outstanding Writing for a Variety Special and a Grammy for his Netflix special Patton Oswalt: Talking for Clapping (2016)."
    ]
 ]
@@ -184,3 +184,16 @@ comedian_profiles.each do |user_id, first_name, last_name, city_state, website, 
     description1: description1
   )
 end
+
+LineupSlot.create!(gig_id: 1, comedian_id: 2)
+LineupSlot.create!(gig_id: 2, comedian_id: 2)
+LineupSlot.create!(gig_id: 3, comedian_id: 2)
+LineupSlot.create!(gig_id: 1, comedian_id: 3)
+LineupSlot.create!(gig_id: 3, comedian_id: 3)
+LineupSlot.create!(gig_id: 4, comedian_id: 3)
+LineupSlot.create!(gig_id: 1, comedian_id: 4)
+LineupSlot.create!(gig_id: 2, comedian_id: 4)
+LineupSlot.create!(gig_id: 5, comedian_id: 4)
+LineupSlot.create!(gig_id: 2, comedian_id: 5)
+LineupSlot.create!(gig_id: 3, comedian_id: 5)
+LineupSlot.create!(gig_id: 4, comedian_id: 5)

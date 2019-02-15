@@ -42,7 +42,7 @@ class ComedianProfileContainer extends Component {
   );
 
     return (
-      <div className="grid-container callout center round-borders margin-top">
+      <div className="grid-container callout center round-borders margin-top box-shadow">
         <div className="grid-x margin-top">
           <div className="cell small-12 font-slab weight7 text2">{this.state.userData.full_name}</div>
         </div>
@@ -56,7 +56,7 @@ class ComedianProfileContainer extends Component {
             <p>Based out of {this.state.comedianProfile.city_state}</p>
           </div>
         </div>
-        <div className="grid-x margin-top">
+        <div className="grid-x grid-margin-x margin-top">
           <div className="cell small-12">
             <div className="font-slab weight7 text4">Upcoming Shows</div>
           </div>

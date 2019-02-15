@@ -5,6 +5,7 @@ import EventShowContainer from "../containers/EventShowContainer";
 import NewShowContainer from "../containers/NewShowContainer";
 import UserProfileContainer from "../containers/UserProfileContainer";
 import ComedianProfileContainer from "../containers/ComedianProfileContainer";
+import ComedianIndexContainer from "../containers/ComedianIndexContainer";
 import SplashPage from "./SplashPage";
 
 export const App = props => {
@@ -17,6 +18,7 @@ export const App = props => {
       <Route path="/users/:id" component={UserProfileContainer} />
       <Route path="/profile" component={UserProfileContainer} />
       <Route path="/comedians/:id" component={ComedianProfileContainer} />
+      <Route path="/comedians" component={ComedianIndexContainer} />
     </Router>
   );
 };

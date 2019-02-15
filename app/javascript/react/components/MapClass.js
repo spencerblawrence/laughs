@@ -13,7 +13,7 @@ class MapClass extends Component {
     const GoogleMapExample = withGoogleMap(props => (
       <GoogleMap
         defaultCenter = { { lat: 42.3601, lng: -71.0589 } }
-        defaultZoom = { 11 }
+        defaultZoom = { 12 }
         >
         <MapMarkers events={this.props.events} />
       </GoogleMap>

@@ -88,7 +88,7 @@ class EventShowContainer extends Component {
 
   return (
     <div className="grid-container">
-      <div className="grid-x callout event-show-tile">
+      <div className="grid-x callout event-show-tile box-shadow">
         <div className="cell small-3">
           <img className="event-index-tile-image" src={this.state.event.image_url} />
         </div>
@@ -103,12 +103,12 @@ class EventShowContainer extends Component {
           <div className="button radius" onClick={this.signupClick}>{this.state.signup_button_text}</div>
         </div>
       </div>
-      <div className="grid-x callout">
+      <div className="grid-x">
         <div className="cell small-12">
-          <div className="font-slab text3 weight4 center-text">The Lineup</div>
+          <div className="font-slab text3 weight7 center-text">The Lineup</div>
         </div>
       </div>
-      <div className="grid-x callout">
+      <div className="grid-x callout round-borders box-shadow">
         {comedians}
       </div>
     </div>

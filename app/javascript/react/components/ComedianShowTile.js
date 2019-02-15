@@ -14,7 +14,3 @@ const ComedianShowTile = props => {
 };
 
 export default ComedianShowTile;
-
-// <a href={`/comedians/${props.id}`}>
-//   <img src={props.photo} className="comedian-show-tile-pic"/>
-// </a>

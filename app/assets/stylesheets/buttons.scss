@@ -31,3 +31,16 @@ button.round, .button.round {
   border-radius: 5px;
   text-align: center;
 }
+
+.button {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.event-tile-button {
+  padding: 10px;
+  margin: 0px;
+  background-color: #fcbe32;
+  color: black;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  border: 1px solid grey;
+}

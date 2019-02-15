@@ -1,6 +1,6 @@
 class Api::V1::ComedianProfilesController < ApplicationController
   def index
-    render json: ComedianProfile.all
+    render json: ComedianProfile.all.order(last_name: :asc)
   end
 
   def show
