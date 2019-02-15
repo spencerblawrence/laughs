@@ -85,6 +85,7 @@ class EventsIndexContainer extends Component {
 
     let events_filtered = []
     let events = this.state.events.map(event => {
+      // debugger
       if (event.cost <= this.state.max_price && event.start_date_time <= daysOutDate) {
         events_filtered.push(event)
         return (
@@ -113,12 +114,14 @@ class EventsIndexContainer extends Component {
     return (
       <div className="grid-container">
         <div className="grid-x grid-margin-x grid-margin-y">
-          <div className="cell small-12 home-button-row">
+          <div className="cell small-8 home-button-row center-content2">
             <Link to={`/events/new`}><button className="button radius spacer">Submit a New Show</button></Link>
             <button className="button radius spacer" onClick={this.toggleMap}>{this.state.map_button_text}</button>
             <button className="button radius spacer" onClick={this.toggleFilters}>{this.state.filter_button_text}</button>
-            {filters}
           </div>
+        </div>
+        <div className="grid-x grid-margin-x center-content2">
+          {filters}
         </div>
         {map}
         <div className="grid-x grid-margin-x">
