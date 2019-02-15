@@ -1,6 +1,9 @@
+$box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 .event-index-tile {
   border-radius: 6px;
   border-color: white;
+  box-shadow: $box-shadow;
 }
 
 .event-index-tile-image {
@@ -26,14 +29,12 @@
 .comedian-index-tile {
   border-radius: 6px;
   background-color: white;
-}
-
-.comedian-index-prof-pic {
-  max-width: 300px;
-  border-top: 6px;
+  overflow: hidden;
+  max-height: 300px;
 }
 
 .comedian-show-tile-pic {
+  box-shadow: $box-shadow;
   display: flex;
   object-fit: scale-down;
   max-width: 320px;
@@ -44,8 +45,7 @@
 }
 
 .comedian-show-tile-box {
-  // display: flex;
-  // justify-content: space-around;
+  margin-bottom: 20px;
 }
 
 // FORMS
@@ -116,4 +116,8 @@
 
 .margin-top {
   margin-top: 40px;
+}
+
+.box-shadow {
+  box-shadow: $box-shadow;
 }

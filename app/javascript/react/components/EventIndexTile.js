@@ -21,7 +21,7 @@ const EventIndexTile = props => {
         <p>{props.event.started_at_time}</p>
         <p>${props.event.cost}</p>
         <p>{cost}</p>
-        <Link to={`/events/${props.id}`}><p>See Lineup, Reviews & RSVP</p></Link>
+        <Link to={`/events/${props.id}`}><button className="button event-tile-button radius spacer">See Lineup, Reviews & RSVP</button></Link>
       </div>
     </div>
   );
