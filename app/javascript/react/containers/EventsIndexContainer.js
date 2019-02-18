@@ -114,7 +114,7 @@ class EventsIndexContainer extends Component {
     return (
       <div className="grid-container">
         <div className="grid-x grid-margin-x grid-margin-y">
-          <div className="cell small-8 home-button-row center-content2">
+          <div className="cell home-button-row center-content2">
             <Link to={`/events/new`}><button className="button radius spacer">Submit a New Show</button></Link>
             <button className="button radius spacer" onClick={this.toggleMap}>{this.state.map_button_text}</button>
             <button className="button radius spacer" onClick={this.toggleFilters}>{this.state.filter_button_text}</button>

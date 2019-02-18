@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import EventIndexTile from "../components/EventIndexTile";
+import EventTileWideWMap from "../components/EventTileWideWMap";
 
 class ComedianProfileContainer extends Component {
   constructor(props) {
@@ -30,23 +31,27 @@ class ComedianProfileContainer extends Component {
         gigs: data.user.gigs
       });
     })
-    .catch(error => console.log(`Error in fetch: ${error.message}`));
   }
 
   render() {
-    let gigs = this.state.gigs.map(gig => {
-      return (
-        <EventIndexTile key={gig.id} id={gig.id} event={gig} />
-      );
+    let gigs;
+    if (this.state.gigs.length == 0) {
+      gigs = <div>This comedian doesn't have any shows yet, check back soon!</div>
+    } else {
+      gigs = this.state.gigs.map(gig => {
+        return (
+          <EventTileWideWMap key={gig.id} id={gig.id} />
+        );
+      }
+    );
     }
-  );
 
     return (
-      <div className="grid-container callout center round-borders margin-top box-shadow">
-        <div className="grid-x margin-top">
+      <div className="grid-container margin-top">
+        <div className="grid-x">
           <div className="cell small-12 font-slab weight7 text2">{this.state.userData.full_name}</div>
         </div>
-        <div className="grid-x">
+        <div className="grid-x callout center round-borders box-shadow">
           <div className="cell small-4">
             <img src={this.state.comedianProfile.photo1} className="round-borders" />
           </div>
@@ -56,12 +61,9 @@ class ComedianProfileContainer extends Component {
             <p>Based out of {this.state.comedianProfile.city_state}</p>
           </div>
         </div>
-        <div className="grid-x grid-margin-x margin-top">
-          <div className="cell small-12">
-            <div className="font-slab weight7 text4">Upcoming Shows</div>
-          </div>
-          {gigs}
-        </div>
+        <br />
+        <div className="font-slab weight7 text3">Upcoming Shows</div>
+        {gigs}
       </div>
     );
   }
