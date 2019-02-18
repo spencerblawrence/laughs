@@ -33,7 +33,6 @@ class NewShowContainer extends Component {
   }
 
   handleDayClick(day, { selected }) {
-    console.log(day)
     if (selected) {
       this.setState({ started_at_date: undefined });
       return;

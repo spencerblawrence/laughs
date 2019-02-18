@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
 import ComedianShowTile from "../components/ComedianShowTile";
+import MapIndividual from "../components/MapIndividual";
 
 class EventShowContainer extends Component {
   constructor(props) {
@@ -92,7 +93,7 @@ class EventShowContainer extends Component {
         <div className="cell small-3">
           <img className="event-index-tile-image" src={this.state.event.image_url} />
         </div>
-        <div className="cell small-9 pad-left">
+        <div className="cell small-6 pad-left">
           <div className="font-slab text3 weight7 small-margin-bottom">{this.state.event.name}</div>
           <p>{this.state.event.venue}</p>
           <p>{this.state.event.address}</p>
@@ -101,6 +102,12 @@ class EventShowContainer extends Component {
           <p>${this.state.event.cost}</p>
           <p>{cost}</p>
           <div className="button radius" onClick={this.signupClick}>{this.state.signup_button_text}</div>
+        </div>
+        <div className="cell small-3">
+          <MapIndividual
+            lat={this.state.event.lat}
+            lng={this.state.event.lng}
+            />
         </div>
       </div>
       <div className="grid-x">

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import EventIndexTile from "../components/EventIndexTile";
+import EventTileWideWMap from "../components/EventTileWideWMap";
 
 class UserProfileContainer extends Component {
   constructor(props) {
@@ -34,7 +35,7 @@ class UserProfileContainer extends Component {
   render() {
     let events = this.state.events.map(event => {
       return (
-        <EventIndexTile key={event.id} id={event.id} event={event} />
+        <EventTileWideWMap key={event.id} id={event.id} />
       );
     });
 

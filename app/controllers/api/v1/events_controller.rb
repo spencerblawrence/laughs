@@ -13,12 +13,17 @@ class Api::V1::EventsController < ApplicationController
 
   def create
     event = Event.new(event_params)
+
     geo_loc = MultiGeocoder.geocode(event_params[:address])
+
     event.lat = geo_loc.lat
     event.lng = geo_loc.lng
     # event.user = current_user
 
     if event.save
+      LineupSlot.create!(gig_id: event.id, comedian_id: 2)
+      LineupSlot.create!(gig_id: event.id, comedian_id: 3)
+      LineupSlot.create!(gig_id: event.id, comedian_id: 4)
       render json: event
     else
       render json: { error: event.errors.full_messages }
@@ -27,7 +32,7 @@ class Api::V1::EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:name, :venue, :address, :started_at_date, :started_at_time, :start_date_time, :end_date_time, :cost, :website, :description, :recurring, :image_url)
+    params.require(:event).permit(:id, :name, :venue, :address, :started_at_date, :started_at_time, :start_date_time, :end_date_time, :cost, :website, :description, :recurring, :image_url)
   end
 end
 

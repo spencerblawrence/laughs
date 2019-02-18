@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :signups
   has_many :events, through: :signups
+
   # this creates a method called events
   # calling this method will bring up the sign ups table
   # SELECT * SIGNUPS where this user id = user id in signups table

@@ -24,7 +24,7 @@ class MapClass extends Component {
         <GoogleMapExample
           isMarkerShown
           loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={ <div style={{ height: `500px`, width: '100%' }} /> }
+          containerElement={ <div style={{ height: `450px`, width: '100%' }} /> }
           mapElement={ <div style={{ height: `100%` }} /> }
           />
       </div>
