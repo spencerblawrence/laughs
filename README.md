@@ -24,4 +24,14 @@ Some other notes about the projects:
 - Ruby version = 2.4.5
 - The timezone is set to EST in config/application.rb
 
+Homepage: Events Index Page
 ![alt text](https://s3.amazonaws.com/laughs-development/app_screengrabs/event_index.jpg)
+
+Event Show Page
+![alt text](https://s3.amazonaws.com/laughs-development/app_screengrabs/event_show.jpg)
+
+Comedians Index Page
+![alt text](https://s3.amazonaws.com/laughs-development/app_screengrabs/comedians_index.jpg)
+
+Comedian Show Page
+![alt text](https://s3.amazonaws.com/laughs-development/app_screengrabs/comedian_show.jpg)
