@@ -24,3 +24,4 @@ Some other notes about the projects:
 - Ruby version = 2.4.5
 - The timezone is set to EST in config/application.rb
 
+![alt text](https://s3.amazonaws.com/laughs-development/app_screengrabs/event_index.jpg)
